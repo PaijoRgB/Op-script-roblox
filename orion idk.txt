@@ -1,0 +1,3560 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Orion Z", "BloodTheme")
+ 
+--MAIN
+local main = Window:NewTab("Main Scripts")
+local main = main:NewSection("Made By MrScaney")
+ 
+ 
+main:NewButton("Flips", "DO A FLIP", function()
+    wait(5)
+ 
+--[[ Info ]]--
+ 
+local ver = "2.00"
+local scriptname = "feFlip"
+ 
+ 
+--[[ Keybinds ]]--
+ 
+local FrontflipKey = Enum.KeyCode.Z
+local BackflipKey = Enum.KeyCode.X
+local AirjumpKey = Enum.KeyCode.C
+ 
+ 
+--[[ Dependencies ]]--
+ 
+local ca = game:GetService("ContextActionService")
+local zeezy = game:GetService("Players").LocalPlayer
+local h = 0.0174533
+local antigrav
+ 
+ 
+--[[ Functions ]]--
+ 
+function zeezyFrontflip(act,inp,obj)
+	if inp == Enum.UserInputState.Begin then
+		zeezy.Character.Humanoid:ChangeState("Jumping")
+		wait()
+		zeezy.Character.Humanoid.Sit = true
+		for i = 1,360 do 
+			delay(i/720,function()
+			zeezy.Character.Humanoid.Sit = true
+				zeezy.Character.HumanoidRootPart.CFrame = zeezy.Character.HumanoidRootPart.CFrame * CFrame.Angles(-h,0,0)
+			end)
+		end
+		wait(0.55)
+		zeezy.Character.Humanoid.Sit = false
+	end
+end
+ 
+function zeezyBackflip(act,inp,obj)
+	if inp == Enum.UserInputState.Begin then
+		zeezy.Character.Humanoid:ChangeState("Jumping")
+		wait()
+		zeezy.Character.Humanoid.Sit = true
+		for i = 1,360 do
+			delay(i/720,function()
+			zeezy.Character.Humanoid.Sit = true
+				zeezy.Character.HumanoidRootPart.CFrame = zeezy.Character.HumanoidRootPart.CFrame * CFrame.Angles(h,0,0)
+			end)
+		end
+		wait(0.55)
+		zeezy.Character.Humanoid.Sit = false
+	end
+end
+ 
+function zeezyAirjump(act,inp,obj)
+	if inp == Enum.UserInputState.Begin then
+		zeezy.Character:FindFirstChildOfClass'Humanoid':ChangeState("Seated")
+		wait()
+		zeezy.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")	
+	end
+end
+ 
+ 
+--[[ Binds ]]--
+ 
+ca:BindAction("zeezyFrontflip",zeezyFrontflip,false,FrontflipKey)
+ca:BindAction("zeezyBackflip",zeezyBackflip,false,BackflipKey)
+ca:BindAction("zeezyAirjump",zeezyAirjump,false,AirjumpKey)
+ 
+--[[ Load Message ]]--
+ 
+print(scriptname .. " " .. ver .. " loaded successfully")
+print("made by Zeezy#7203")
+ 
+local notifSound = Instance.new("Sound",workspace)
+notifSound.PlaybackSpeed = 1.5
+notifSound.Volume = 0.15
+notifSound.SoundId = "rbxassetid://170765130"
+notifSound.PlayOnRemove = true
+notifSound:Destroy()
+game.StarterGui:SetCore("SendNotification", {Title = "feFlip", Text = "feFlip loaded successfully!", Icon = "rbxassetid://505845268", Duration = 5, Button1 = "Okay"})
+end)
+ 
+ 
+main:NewToggle("Powerups", "Run fast and Jump high", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
+ 
+ 
+main:NewButton("Infinite Yield", "we do a little trolling?", function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ 
+ 
+--Local Player
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Players")
+ 
+ 
+PlayerSection:NewSlider("S P E E D", "speed giver", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+ 
+ 
+PlayerSection:NewSlider("Jumppower", "ooh look a bird", 400, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+ 
+ 
+PlayerSection:NewButton("reset your w/s", "settings will stay the same", function()
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+ 
+ 
+--Other
+local Other = Window:NewTab("Other goofy scripts")
+local OtherSection = Other:NewSection("Other")
+ 
+ 
+OtherSection:NewButton("troll gui", "ButtonInfo", function()
+    -- Gui to Lua
+-- Version: 3.2
+ 
+-- Instances:
+ 
+local TrollingGUI = Instance.new("ScreenGui")
+local mainframe = Instance.new("Frame")
+local r15frame = Instance.new("Frame")
+local r15blockhead = Instance.new("TextButton")
+local r15creeper = Instance.new("TextButton")
+local r15waist = Instance.new("TextButton")
+local jdaskfjksdjkf = Instance.new("TextLabel")
+local r15blockhats = Instance.new("TextButton")
+local r15animations = Instance.new("TextButton")
+local r15invisible = Instance.new("TextButton")
+local r15admin = Instance.new("TextButton")
+local r15antiafk = Instance.new("TextButton")
+local otherframe = Instance.new("Frame")
+local dogscript = Instance.new("TextButton")
+local iyuoyuioyu = Instance.new("TextLabel")
+local skatescript = Instance.new("TextButton")
+local skateframe = Instance.new("Frame")
+local closeskate = Instance.new("TextButton")
+local ghjkghjk = Instance.new("TextLabel")
+local puiopui = Instance.new("TextLabel")
+local skateopen = Instance.new("TextButton")
+local fathonhub = Instance.new("TextButton")
+local legacyhub = Instance.new("TextButton")
+local phonegui = Instance.new("TextButton")
+local ezhub = Instance.new("TextButton")
+local ragdoll = Instance.new("TextButton")
+local topkek = Instance.new("TextButton")
+local savetoolframe = Instance.new("Frame")
+local hdfgkhkdfhk = Instance.new("TextLabel")
+local loadtools = Instance.new("TextButton")
+local savetools = Instance.new("TextButton")
+local ouiyoyuio = Instance.new("TextLabel")
+local rainbow1 = Instance.new("Frame")
+local rainbow2 = Instance.new("Frame")
+local r6frame = Instance.new("Frame")
+local r6blockhead = Instance.new("TextButton")
+local r6creeper = Instance.new("TextButton")
+local r6Car = Instance.new("TextButton")
+local gdfhdfgh = Instance.new("TextLabel")
+local r6pyramid = Instance.new("TextButton")
+local r6animations = Instance.new("TextButton")
+local r6flingscript = Instance.new("TextButton")
+local r6admin = Instance.new("TextButton")
+local r6antiafk = Instance.new("TextButton")
+local racecarrequirement = Instance.new("TextButton")
+local carframe = Instance.new("Frame")
+local closecar = Instance.new("TextButton")
+local fasdfasf = Instance.new("TextLabel")
+local vxcvxcv = Instance.new("TextLabel")
+local r15open = Instance.new("TextButton")
+local r6open = Instance.new("TextButton")
+local opentools = Instance.new("TextButton")
+local utyuty = Instance.new("TextLabel")
+local otheropen = Instance.new("TextButton")
+local mbnmbnm = Instance.new("TextLabel")
+local mbnmbnm_2 = Instance.new("TextLabel")
+ 
+--Properties:
+ 
+TrollingGUI.Name = "TrollingGUI"
+TrollingGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ 
+mainframe.Name = "mainframe"
+mainframe.Parent = TrollingGUI
+mainframe.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+mainframe.BorderSizePixel = 4
+mainframe.Position = UDim2.new(0.454040706, 0, 0.16216217, 0)
+mainframe.Size = UDim2.new(0, 148, 0, 550)
+ 
+r15frame.Name = "r15frame"
+r15frame.Parent = mainframe
+r15frame.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+r15frame.BorderSizePixel = 4
+r15frame.Position = UDim2.new(1, 0, -0.038181819, 0)
+r15frame.Size = UDim2.new(0, 164, 0, 298)
+r15frame.Visible = false
+ 
+r15blockhead.Name = "r15blockhead"
+r15blockhead.Parent = r15frame
+r15blockhead.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15blockhead.BorderSizePixel = 0
+r15blockhead.Position = UDim2.new(0.0426829271, 0, 0.0201342274, 0)
+r15blockhead.Size = UDim2.new(0, 151, 0, 25)
+r15blockhead.Font = Enum.Font.RobotoMono
+r15blockhead.Text = "BlockHead"
+r15blockhead.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15blockhead.TextSize = 20.000
+r15blockhead.TextWrapped = true
+ 
+r15creeper.Name = "r15creeper"
+r15creeper.Parent = r15frame
+r15creeper.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15creeper.BorderSizePixel = 0
+r15creeper.Position = UDim2.new(0.0426829271, 0, 0.127516776, 0)
+r15creeper.Size = UDim2.new(0, 151, 0, 25)
+r15creeper.Font = Enum.Font.RobotoMono
+r15creeper.Text = "Creeper script"
+r15creeper.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15creeper.TextSize = 20.000
+r15creeper.TextWrapped = true
+ 
+r15waist.Name = "r15waist"
+r15waist.Parent = r15frame
+r15waist.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15waist.BorderSizePixel = 0
+r15waist.Position = UDim2.new(0.0365853682, 0, 0.248322159, 0)
+r15waist.Size = UDim2.new(0, 151, 0, 25)
+r15waist.Font = Enum.Font.RobotoMono
+r15waist.Text = "Remove waist"
+r15waist.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15waist.TextSize = 20.000
+r15waist.TextWrapped = true
+ 
+jdaskfjksdjkf.Name = "jdaskfjksdjkf"
+jdaskfjksdjkf.Parent = r15frame
+jdaskfjksdjkf.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+jdaskfjksdjkf.BackgroundTransparency = 1.000
+jdaskfjksdjkf.Position = UDim2.new(0, 0, -0.0704697967, 0)
+jdaskfjksdjkf.Size = UDim2.new(0, 164, 0, 20)
+jdaskfjksdjkf.Font = Enum.Font.SourceSansBold
+jdaskfjksdjkf.Text = "R15 Scripts"
+jdaskfjksdjkf.TextColor3 = Color3.fromRGB(0, 0, 0)
+jdaskfjksdjkf.TextScaled = true
+jdaskfjksdjkf.TextSize = 14.000
+jdaskfjksdjkf.TextWrapped = true
+ 
+r15blockhats.Name = "r15blockhats"
+r15blockhats.Parent = r15frame
+r15blockhats.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15blockhats.BorderSizePixel = 0
+r15blockhats.Position = UDim2.new(0.0426829308, 0, 0.3657718, 0)
+r15blockhats.Size = UDim2.new(0, 151, 0, 25)
+r15blockhats.Font = Enum.Font.RobotoMono
+r15blockhats.Text = "Block Hats"
+r15blockhats.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15blockhats.TextSize = 20.000
+r15blockhats.TextWrapped = true
+ 
+r15animations.Name = "r15animations"
+r15animations.Parent = r15frame
+r15animations.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15animations.BorderSizePixel = 0
+r15animations.Position = UDim2.new(0.0426829308, 0, 0.493288577, 0)
+r15animations.Size = UDim2.new(0, 151, 0, 25)
+r15animations.Font = Enum.Font.RobotoMono
+r15animations.Text = "AnimationGUI"
+r15animations.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15animations.TextSize = 20.000
+r15animations.TextWrapped = true
+ 
+r15invisible.Name = "r15invisible"
+r15invisible.Parent = r15frame
+r15invisible.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15invisible.BorderSizePixel = 0
+r15invisible.Position = UDim2.new(0.0426829308, 0, 0.607382536, 0)
+r15invisible.Size = UDim2.new(0, 151, 0, 25)
+r15invisible.Font = Enum.Font.RobotoMono
+r15invisible.Text = "Invisible Script"
+r15invisible.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15invisible.TextSize = 20.000
+r15invisible.TextWrapped = true
+ 
+r15admin.Name = "r15admin"
+r15admin.Parent = r15frame
+r15admin.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15admin.BorderSizePixel = 0
+r15admin.Position = UDim2.new(0.0426829308, 0, 0.728187859, 0)
+r15admin.Size = UDim2.new(0, 151, 0, 25)
+r15admin.Font = Enum.Font.RobotoMono
+r15admin.Text = "Shattervest "
+r15admin.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15admin.TextSize = 20.000
+r15admin.TextWrapped = true
+ 
+r15antiafk.Name = "r15antiafk"
+r15antiafk.Parent = r15frame
+r15antiafk.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15antiafk.BorderSizePixel = 0
+r15antiafk.Position = UDim2.new(0.0426829308, 0, 0.84563756, 0)
+r15antiafk.Size = UDim2.new(0, 151, 0, 25)
+r15antiafk.Font = Enum.Font.RobotoMono
+r15antiafk.Text = "Anti-AFK"
+r15antiafk.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15antiafk.TextSize = 20.000
+r15antiafk.TextWrapped = true
+ 
+otherframe.Name = "otherframe"
+otherframe.Parent = mainframe
+otherframe.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+otherframe.BorderSizePixel = 4
+otherframe.Position = UDim2.new(-1.10810804, 0, 0.50363636, 0)
+otherframe.Size = UDim2.new(0, 164, 0, 298)
+otherframe.Visible = false
+ 
+dogscript.Name = "dogscript"
+dogscript.Parent = otherframe
+dogscript.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+dogscript.BorderSizePixel = 0
+dogscript.Position = UDim2.new(0.0365853682, 0, 0.0637583882, 0)
+dogscript.Size = UDim2.new(0, 151, 0, 25)
+dogscript.Font = Enum.Font.RobotoMono
+dogscript.Text = "Dog Script R6"
+dogscript.TextColor3 = Color3.fromRGB(255, 255, 255)
+dogscript.TextSize = 20.000
+dogscript.TextWrapped = true
+ 
+iyuoyuioyu.Name = "iyuoyuioyu"
+iyuoyuioyu.Parent = otherframe
+iyuoyuioyu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+iyuoyuioyu.BackgroundTransparency = 1.000
+iyuoyuioyu.Position = UDim2.new(0, 0, 1, 0)
+iyuoyuioyu.Size = UDim2.new(0, 164, 0, 20)
+iyuoyuioyu.Font = Enum.Font.SourceSansBold
+iyuoyuioyu.Text = "Other Scripts"
+iyuoyuioyu.TextColor3 = Color3.fromRGB(0, 0, 0)
+iyuoyuioyu.TextScaled = true
+iyuoyuioyu.TextSize = 14.000
+iyuoyuioyu.TextWrapped = true
+ 
+skatescript.Name = "skatescript"
+skatescript.Parent = otherframe
+skatescript.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+skatescript.BorderSizePixel = 0
+skatescript.Position = UDim2.new(0.0365853682, 0, 0.177852347, 0)
+skatescript.Size = UDim2.new(0, 151, 0, 25)
+skatescript.Font = Enum.Font.RobotoMono
+skatescript.Text = "Skateboard R6"
+skatescript.TextColor3 = Color3.fromRGB(255, 255, 255)
+skatescript.TextSize = 20.000
+skatescript.TextWrapped = true
+ 
+skateframe.Name = "skateframe"
+skateframe.Parent = otherframe
+skateframe.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+skateframe.BorderSizePixel = 0
+skateframe.Position = UDim2.new(-0.84785378, 0, 0.0874429494, 0)
+skateframe.Size = UDim2.new(0, 100, 0, 100)
+skateframe.Visible = false
+ 
+closeskate.Name = "closeskate"
+closeskate.Parent = skateframe
+closeskate.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+closeskate.BorderSizePixel = 0
+closeskate.Position = UDim2.new(0, 0, 0.850000024, 0)
+closeskate.Size = UDim2.new(0, 100, 0, 15)
+closeskate.Font = Enum.Font.SourceSansBold
+closeskate.Text = "CLOSE"
+closeskate.TextColor3 = Color3.fromRGB(0, 0, 0)
+closeskate.TextScaled = true
+closeskate.TextSize = 14.000
+closeskate.TextWrapped = true
+ 
+ghjkghjk.Name = "ghjkghjk"
+ghjkghjk.Parent = skateframe
+ghjkghjk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ghjkghjk.BackgroundTransparency = 1.000
+ghjkghjk.Size = UDim2.new(0, 100, 0, 47)
+ghjkghjk.Font = Enum.Font.SourceSansBold
+ghjkghjk.Text = "This Script Requires A certain hat to be run"
+ghjkghjk.TextColor3 = Color3.fromRGB(255, 255, 255)
+ghjkghjk.TextScaled = true
+ghjkghjk.TextSize = 14.000
+ghjkghjk.TextWrapped = true
+ 
+puiopui.Name = "puiopui"
+puiopui.Parent = skateframe
+puiopui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+puiopui.BackgroundTransparency = 1.000
+puiopui.Position = UDim2.new(0, 0, 0.469999999, 0)
+puiopui.Size = UDim2.new(0, 100, 0, 38)
+puiopui.Font = Enum.Font.SourceSansBold
+puiopui.Text = "Hat : Cold Stare Skateboard"
+puiopui.TextColor3 = Color3.fromRGB(255, 255, 255)
+puiopui.TextScaled = true
+puiopui.TextSize = 14.000
+puiopui.TextWrapped = true
+ 
+skateopen.Name = "skateopen"
+skateopen.Parent = otherframe
+skateopen.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+skateopen.BorderSizePixel = 0
+skateopen.Position = UDim2.new(-0.170731664, 0, 0.171140954, 0)
+skateopen.Size = UDim2.new(0, 28, 0, 28)
+skateopen.Font = Enum.Font.SourceSans
+skateopen.Text = "?"
+skateopen.TextColor3 = Color3.fromRGB(0, 0, 0)
+skateopen.TextScaled = true
+skateopen.TextSize = 14.000
+skateopen.TextWrapped = true
+ 
+fathonhub.Name = "fathonhub"
+fathonhub.Parent = otherframe
+fathonhub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+fathonhub.BorderSizePixel = 0
+fathonhub.Position = UDim2.new(0.0365853682, 0, 0.302013427, 0)
+fathonhub.Size = UDim2.new(0, 151, 0, 25)
+fathonhub.Font = Enum.Font.RobotoMono
+fathonhub.Text = "Fathom Hub"
+fathonhub.TextColor3 = Color3.fromRGB(255, 255, 255)
+fathonhub.TextSize = 20.000
+fathonhub.TextWrapped = true
+ 
+legacyhub.Name = "legacyhub"
+legacyhub.Parent = otherframe
+legacyhub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+legacyhub.BorderSizePixel = 0
+legacyhub.Position = UDim2.new(0.0365853682, 0, 0.42281878, 0)
+legacyhub.Size = UDim2.new(0, 151, 0, 25)
+legacyhub.Font = Enum.Font.RobotoMono
+legacyhub.Text = "Legacy Hub"
+legacyhub.TextColor3 = Color3.fromRGB(255, 255, 255)
+legacyhub.TextSize = 20.000
+legacyhub.TextWrapped = true
+ 
+phonegui.Name = "phonegui"
+phonegui.Parent = otherframe
+phonegui.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+phonegui.BorderSizePixel = 0
+phonegui.Position = UDim2.new(0.0365853682, 0, 0.543624163, 0)
+phonegui.Size = UDim2.new(0, 151, 0, 25)
+phonegui.Font = Enum.Font.RobotoMono
+phonegui.Text = "Phone GUI"
+phonegui.TextColor3 = Color3.fromRGB(255, 255, 255)
+phonegui.TextSize = 20.000
+phonegui.TextWrapped = true
+ 
+ezhub.Name = "ezhub"
+ezhub.Parent = otherframe
+ezhub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+ezhub.BorderSizePixel = 0
+ezhub.Position = UDim2.new(0.0365853682, 0, 0.664429545, 0)
+ezhub.Size = UDim2.new(0, 151, 0, 25)
+ezhub.Font = Enum.Font.RobotoMono
+ezhub.Text = "Ez HUB"
+ezhub.TextColor3 = Color3.fromRGB(255, 255, 255)
+ezhub.TextSize = 20.000
+ezhub.TextWrapped = true
+ 
+ragdoll.Name = "ragdoll"
+ragdoll.Parent = otherframe
+ragdoll.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+ragdoll.BorderSizePixel = 0
+ragdoll.Position = UDim2.new(0.0365853682, 0, 0.775167823, 0)
+ragdoll.Size = UDim2.new(0, 151, 0, 25)
+ragdoll.Font = Enum.Font.RobotoMono
+ragdoll.Text = "Ragdoll Engine"
+ragdoll.TextColor3 = Color3.fromRGB(255, 255, 255)
+ragdoll.TextSize = 20.000
+ragdoll.TextWrapped = true
+ 
+topkek.Name = "topkek"
+topkek.Parent = otherframe
+topkek.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+topkek.BorderSizePixel = 0
+topkek.Position = UDim2.new(0.0365853682, 0, 0.889261782, 0)
+topkek.Size = UDim2.new(0, 151, 0, 25)
+topkek.Font = Enum.Font.RobotoMono
+topkek.Text = "topk3k"
+topkek.TextColor3 = Color3.fromRGB(255, 255, 255)
+topkek.TextSize = 20.000
+topkek.TextWrapped = true
+ 
+savetoolframe.Name = "savetoolframe"
+savetoolframe.Parent = mainframe
+savetoolframe.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+savetoolframe.BorderSizePixel = 4
+savetoolframe.Position = UDim2.new(-1.10810804, 0, -0.0381818414, 0)
+savetoolframe.Size = UDim2.new(0, 164, 0, 298)
+savetoolframe.Visible = false
+ 
+hdfgkhkdfhk.Name = "hdfgkhkdfhk"
+hdfgkhkdfhk.Parent = savetoolframe
+hdfgkhkdfhk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+hdfgkhkdfhk.BackgroundTransparency = 1.000
+hdfgkhkdfhk.Position = UDim2.new(0, 0, -0.0704697967, 0)
+hdfgkhkdfhk.Size = UDim2.new(0, 164, 0, 20)
+hdfgkhkdfhk.Font = Enum.Font.SourceSansBold
+hdfgkhkdfhk.Text = "Save/Load Tools"
+hdfgkhkdfhk.TextColor3 = Color3.fromRGB(0, 0, 0)
+hdfgkhkdfhk.TextScaled = true
+hdfgkhkdfhk.TextSize = 14.000
+hdfgkhkdfhk.TextWrapped = true
+ 
+loadtools.Name = "loadtools"
+loadtools.Parent = savetoolframe
+loadtools.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+loadtools.BorderSizePixel = 0
+loadtools.Position = UDim2.new(0.0365853645, 0, 0.0436241627, 0)
+loadtools.Size = UDim2.new(0, 151, 0, 61)
+loadtools.Font = Enum.Font.RobotoMono
+loadtools.Text = "LOAD TOOLS"
+loadtools.TextColor3 = Color3.fromRGB(255, 255, 255)
+loadtools.TextSize = 20.000
+loadtools.TextWrapped = true
+ 
+savetools.Name = "savetools"
+savetools.Parent = savetoolframe
+savetools.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+savetools.BorderSizePixel = 0
+savetools.Position = UDim2.new(0.0365853645, 0, 0.305369139, 0)
+savetools.Size = UDim2.new(0, 151, 0, 61)
+savetools.Font = Enum.Font.RobotoMono
+savetools.Text = "SAVE TOOLS"
+savetools.TextColor3 = Color3.fromRGB(255, 255, 255)
+savetools.TextSize = 20.000
+savetools.TextWrapped = true
+ 
+ouiyoyuio.Name = "ouiyoyuio"
+ouiyoyuio.Parent = savetoolframe
+ouiyoyuio.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ouiyoyuio.BackgroundTransparency = 1.000
+ouiyoyuio.Position = UDim2.new(0.0927819982, 0, 0.576754153, 0)
+ouiyoyuio.Size = UDim2.new(0, 131, 0, 97)
+ouiyoyuio.Font = Enum.Font.SourceSansBold
+ouiyoyuio.Text = "this script saves your tools so whenever you die, press save tools and then whenever you respawn the tools will be back in your inventory"
+ouiyoyuio.TextColor3 = Color3.fromRGB(255, 255, 255)
+ouiyoyuio.TextScaled = true
+ouiyoyuio.TextSize = 14.000
+ouiyoyuio.TextWrapped = true
+ 
+rainbow1.Name = "rainbow1"
+rainbow1.Parent = mainframe
+rainbow1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+rainbow1.BorderSizePixel = 4
+rainbow1.Position = UDim2.new(0, 0, -0.038181819, 0)
+rainbow1.Size = UDim2.new(0, 148, 0, 21)
+ 
+rainbow2.Name = "rainbow2"
+rainbow2.Parent = mainframe
+rainbow2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+rainbow2.BorderSizePixel = 4
+rainbow2.Position = UDim2.new(0, 0, 1.00727272, 0)
+rainbow2.Size = UDim2.new(0, 148, 0, 21)
+ 
+r6frame.Name = "r6frame"
+r6frame.Parent = mainframe
+r6frame.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+r6frame.BorderSizePixel = 4
+r6frame.Position = UDim2.new(1, 0, 0.514545441, 0)
+r6frame.Size = UDim2.new(0, 164, 0, 298)
+r6frame.Visible = false
+ 
+r6blockhead.Name = "r6blockhead"
+r6blockhead.Parent = r6frame
+r6blockhead.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6blockhead.BorderSizePixel = 0
+r6blockhead.Position = UDim2.new(0.0426829271, 0, 0.0201342274, 0)
+r6blockhead.Size = UDim2.new(0, 151, 0, 25)
+r6blockhead.Font = Enum.Font.RobotoMono
+r6blockhead.Text = "BlockHead"
+r6blockhead.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6blockhead.TextSize = 20.000
+r6blockhead.TextWrapped = true
+ 
+r6creeper.Name = "r6creeper"
+r6creeper.Parent = r6frame
+r6creeper.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6creeper.BorderSizePixel = 0
+r6creeper.Position = UDim2.new(0.0426829271, 0, 0.127516776, 0)
+r6creeper.Size = UDim2.new(0, 151, 0, 25)
+r6creeper.Font = Enum.Font.RobotoMono
+r6creeper.Text = "Creeper script"
+r6creeper.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6creeper.TextSize = 20.000
+r6creeper.TextWrapped = true
+ 
+r6Car.Name = "r6Car"
+r6Car.Parent = r6frame
+r6Car.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6Car.BorderSizePixel = 0
+r6Car.Position = UDim2.new(0.0365853682, 0, 0.248322159, 0)
+r6Car.Size = UDim2.new(0, 151, 0, 25)
+r6Car.Font = Enum.Font.RobotoMono
+r6Car.Text = "Race Car "
+r6Car.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6Car.TextSize = 20.000
+r6Car.TextWrapped = true
+ 
+gdfhdfgh.Name = "gdfhdfgh"
+gdfhdfgh.Parent = r6frame
+gdfhdfgh.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+gdfhdfgh.BackgroundTransparency = 1.000
+gdfhdfgh.Position = UDim2.new(0, 0, 1, 0)
+gdfhdfgh.Size = UDim2.new(0, 164, 0, 20)
+gdfhdfgh.Font = Enum.Font.SourceSansBold
+gdfhdfgh.Text = "R6 Scripts"
+gdfhdfgh.TextColor3 = Color3.fromRGB(0, 0, 0)
+gdfhdfgh.TextScaled = true
+gdfhdfgh.TextSize = 14.000
+gdfhdfgh.TextWrapped = true
+ 
+r6pyramid.Name = "r6pyramid"
+r6pyramid.Parent = r6frame
+r6pyramid.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6pyramid.BorderSizePixel = 0
+r6pyramid.Position = UDim2.new(0.0426829308, 0, 0.3657718, 0)
+r6pyramid.Size = UDim2.new(0, 151, 0, 25)
+r6pyramid.Font = Enum.Font.RobotoMono
+r6pyramid.Text = "Pyramid Script"
+r6pyramid.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6pyramid.TextSize = 20.000
+r6pyramid.TextWrapped = true
+ 
+r6animations.Name = "r6animations"
+r6animations.Parent = r6frame
+r6animations.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6animations.BorderSizePixel = 0
+r6animations.Position = UDim2.new(0.0426829308, 0, 0.493288577, 0)
+r6animations.Size = UDim2.new(0, 151, 0, 25)
+r6animations.Font = Enum.Font.RobotoMono
+r6animations.Text = "AnimationGUI"
+r6animations.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6animations.TextSize = 20.000
+r6animations.TextWrapped = true
+ 
+r6flingscript.Name = "r6flingscript"
+r6flingscript.Parent = r6frame
+r6flingscript.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6flingscript.BorderSizePixel = 0
+r6flingscript.Position = UDim2.new(0.0426829308, 0, 0.607382536, 0)
+r6flingscript.Size = UDim2.new(0, 151, 0, 25)
+r6flingscript.Font = Enum.Font.RobotoMono
+r6flingscript.Text = "FLING GUI"
+r6flingscript.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6flingscript.TextSize = 20.000
+r6flingscript.TextWrapped = true
+ 
+r6admin.Name = "r6admin"
+r6admin.Parent = r6frame
+r6admin.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6admin.BorderSizePixel = 0
+r6admin.Position = UDim2.new(0.0426829308, 0, 0.728187859, 0)
+r6admin.Size = UDim2.new(0, 151, 0, 25)
+r6admin.Font = Enum.Font.RobotoMono
+r6admin.Text = "Shattervest "
+r6admin.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6admin.TextSize = 20.000
+r6admin.TextWrapped = true
+ 
+r6antiafk.Name = "r6antiafk"
+r6antiafk.Parent = r6frame
+r6antiafk.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6antiafk.BorderSizePixel = 0
+r6antiafk.Position = UDim2.new(0.0426829308, 0, 0.84563756, 0)
+r6antiafk.Size = UDim2.new(0, 151, 0, 25)
+r6antiafk.Font = Enum.Font.RobotoMono
+r6antiafk.Text = "Anti-AFK"
+r6antiafk.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6antiafk.TextSize = 20.000
+r6antiafk.TextWrapped = true
+ 
+racecarrequirement.Name = "racecarrequirement"
+racecarrequirement.Parent = r6frame
+racecarrequirement.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+racecarrequirement.BorderSizePixel = 0
+racecarrequirement.Position = UDim2.new(1, 0, 0.241610751, 0)
+racecarrequirement.Size = UDim2.new(0, 28, 0, 28)
+racecarrequirement.Font = Enum.Font.SourceSans
+racecarrequirement.Text = "?"
+racecarrequirement.TextColor3 = Color3.fromRGB(0, 0, 0)
+racecarrequirement.TextScaled = true
+racecarrequirement.TextSize = 14.000
+racecarrequirement.TextWrapped = true
+ 
+carframe.Name = "carframe"
+carframe.Parent = r6frame
+carframe.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+carframe.BorderSizePixel = 0
+carframe.Position = UDim2.new(1.23170733, 0, 0.120805368, 0)
+carframe.Size = UDim2.new(0, 100, 0, 100)
+carframe.Visible = false
+ 
+closecar.Name = "closecar"
+closecar.Parent = carframe
+closecar.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+closecar.BorderSizePixel = 0
+closecar.Position = UDim2.new(0, 0, 0.850000024, 0)
+closecar.Size = UDim2.new(0, 100, 0, 15)
+closecar.Font = Enum.Font.SourceSansBold
+closecar.Text = "CLOSE"
+closecar.TextColor3 = Color3.fromRGB(0, 0, 0)
+closecar.TextScaled = true
+closecar.TextSize = 14.000
+closecar.TextWrapped = true
+ 
+fasdfasf.Name = "fasdfasf"
+fasdfasf.Parent = carframe
+fasdfasf.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fasdfasf.BackgroundTransparency = 1.000
+fasdfasf.Size = UDim2.new(0, 100, 0, 47)
+fasdfasf.Font = Enum.Font.SourceSansBold
+fasdfasf.Text = "This Script Requires A certain hat to be run"
+fasdfasf.TextColor3 = Color3.fromRGB(255, 255, 255)
+fasdfasf.TextScaled = true
+fasdfasf.TextSize = 14.000
+fasdfasf.TextWrapped = true
+ 
+vxcvxcv.Name = "vxcvxcv"
+vxcvxcv.Parent = carframe
+vxcvxcv.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+vxcvxcv.BackgroundTransparency = 1.000
+vxcvxcv.Position = UDim2.new(0, 0, 0.469999999, 0)
+vxcvxcv.Size = UDim2.new(0, 100, 0, 38)
+vxcvxcv.Font = Enum.Font.SourceSansBold
+vxcvxcv.Text = "Hat : Elitoria-RN750"
+vxcvxcv.TextColor3 = Color3.fromRGB(255, 255, 255)
+vxcvxcv.TextScaled = true
+vxcvxcv.TextSize = 14.000
+vxcvxcv.TextWrapped = true
+ 
+r15open.Name = "r15open"
+r15open.Parent = mainframe
+r15open.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r15open.BorderSizePixel = 0
+r15open.Position = UDim2.new(0.515655935, 0, 0.060561303, 0)
+r15open.Size = UDim2.new(0, 71, 0, 188)
+r15open.Font = Enum.Font.RobotoMono
+r15open.Text = "R15 Scripts"
+r15open.TextColor3 = Color3.fromRGB(255, 255, 255)
+r15open.TextSize = 20.000
+r15open.TextWrapped = true
+ 
+r6open.Name = "r6open"
+r6open.Parent = mainframe
+r6open.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+r6open.BorderSizePixel = 0
+r6open.Position = UDim2.new(0.515655935, 0, 0.627834022, 0)
+r6open.Size = UDim2.new(0, 71, 0, 188)
+r6open.Font = Enum.Font.RobotoMono
+r6open.Text = "R6 Scripts"
+r6open.TextColor3 = Color3.fromRGB(255, 255, 255)
+r6open.TextSize = 20.000
+r6open.TextWrapped = true
+ 
+opentools.Name = "opentools"
+opentools.Parent = mainframe
+opentools.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+opentools.BorderSizePixel = 0
+opentools.Position = UDim2.new(-0.00461435318, 0, 0.058743123, 0)
+opentools.Size = UDim2.new(0, 71, 0, 188)
+opentools.Font = Enum.Font.RobotoMono
+opentools.Text = "Save     &    Load Tools"
+opentools.TextColor3 = Color3.fromRGB(255, 255, 255)
+opentools.TextSize = 20.000
+opentools.TextWrapped = true
+ 
+utyuty.Name = "utyuty"
+utyuty.Parent = mainframe
+utyuty.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+utyuty.BackgroundTransparency = 1.000
+utyuty.Position = UDim2.new(0.0561964698, 0, 0, 0)
+utyuty.Size = UDim2.new(0, 131, 0, 29)
+utyuty.Font = Enum.Font.SourceSansBold
+utyuty.Text = "FE TROLLING GUI V2"
+utyuty.TextColor3 = Color3.fromRGB(255, 255, 255)
+utyuty.TextScaled = true
+utyuty.TextSize = 14.000
+utyuty.TextWrapped = true
+ 
+otheropen.Name = "otheropen"
+otheropen.Parent = mainframe
+otheropen.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+otheropen.BorderSizePixel = 0
+otheropen.Position = UDim2.new(-0.00461435318, 0, 0.627834022, 0)
+otheropen.Size = UDim2.new(0, 71, 0, 188)
+otheropen.Font = Enum.Font.RobotoMono
+otheropen.Text = "Other Scripts"
+otheropen.TextColor3 = Color3.fromRGB(255, 255, 255)
+otheropen.TextSize = 20.000
+otheropen.TextWrapped = true
+ 
+mbnmbnm.Name = "mbnmbnm"
+mbnmbnm.Parent = mainframe
+mbnmbnm.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mbnmbnm.BackgroundTransparency = 1.000
+mbnmbnm.Position = UDim2.new(0.0561964698, 0, 0.419999987, 0)
+mbnmbnm.Size = UDim2.new(0, 131, 0, 29)
+mbnmbnm.Font = Enum.Font.SourceSansBold
+mbnmbnm.Text = "GUI made by MastersMZ on YT"
+mbnmbnm.TextColor3 = Color3.fromRGB(255, 255, 255)
+mbnmbnm.TextScaled = true
+mbnmbnm.TextSize = 14.000
+mbnmbnm.TextWrapped = true
+ 
+mbnmbnm_2.Name = "mbnmbnm"
+mbnmbnm_2.Parent = mainframe
+mbnmbnm_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mbnmbnm_2.BackgroundTransparency = 1.000
+mbnmbnm_2.Position = UDim2.new(0.0561964698, 0, 0.485454559, 0)
+mbnmbnm_2.Size = UDim2.new(0, 131, 0, 63)
+mbnmbnm_2.Font = Enum.Font.SourceSansBold
+mbnmbnm_2.Text = "Scripts with a ? next to them Require a Hat to use (press ? on them to see requirements)"
+mbnmbnm_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+mbnmbnm_2.TextScaled = true
+mbnmbnm_2.TextSize = 14.000
+mbnmbnm_2.TextWrapped = true
+ 
+ 
+ 
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Trolling GUI";
+	Text = "Press Z To Open :))";
+})
+ 
+wait(2)
+ 
+-- Functions ---
+ 
+mainframe.Active = true
+mainframe.Draggable = true
+ 
+ 
+ 
+closecar.MouseButton1Click:connect(function()
+	carframe.Visible = false
+end)
+ 
+racecarrequirement.MouseButton1Click:connect(function()
+	carframe.Visible = true
+end)
+ 
+skateopen.MouseButton1Click:connect(function()
+	skateframe.Visible = true
+end)
+ 
+closeskate.MouseButton1Click:connect(function()
+	skateframe.Visible = false
+end)
+ 
+local hotkey = "z" -- must be lowercase
+local mouse = game.Players.LocalPlayer:GetMouse()
+ 
+mouse.KeyDown:Connect(function(key)
+	if key == hotkey then
+		if mainframe.Visible then
+			mainframe.Visible = not mainframe.Visible
+		else
+			mainframe.Visible = true
+		end
+	end
+end)
+ 
+r15open.MouseButton1Click:connect(function()
+	if r15frame.Visible == false then
+		r15frame.Visible = true
+	else
+		r15frame.Visible = false
+	end
+end)
+ 
+r6open.MouseButton1Click:connect(function()
+	if r6frame.Visible == false then
+		r6frame.Visible = true
+	else
+		r6frame.Visible = false
+	end
+end)
+ 
+otheropen.MouseButton1Click:connect(function()
+	if otherframe.Visible == false then
+		otherframe.Visible = true
+	else
+		otherframe.Visible = false
+	end
+end)
+ 
+opentools.MouseButton1Click:connect(function()
+	if savetoolframe.Visible == false then
+		savetoolframe.Visible = true
+	else
+		savetoolframe.Visible = false
+	end
+end)
+ 
+---- scripts -----
+ 
+r15blockhead.MouseButton1Click:connect(function()
+	game.Players.LocalPlayer.Character.Head.Mesh:destroy()
+end)
+ 
+r15creeper.MouseButton1Click:connect(function()
+	game.Players.LocalPlayer.Character.Head.Mesh:destroy()
+	function doo(limb, pos)
+		limb:BreakJoints()
+		local velocity = Instance.new("RocketPropulsion", limb)
+		velocity.CartoonFactor = 0
+		velocity.MaxSpeed = 30
+		velocity.MaxThrust = 9999
+		velocity.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+		velocity.Target = game.Players.LocalPlayer.Character.UpperTorso
+		velocity.TargetOffset = pos
+		velocity:fire()
+		local b = Instance.new("BodyGyro", limb)
+	end
+	while wait() do
+		doo(game.Players.LocalPlayer.Character["LeftUpperArm"], Vector3.new(-0.5,-2,-1))
+		doo(game.Players.LocalPlayer.Character["RightUpperArm"], Vector3.new(0.5,-2,-1))
+		doo(game.Players.LocalPlayer.Character["LeftUpperLeg"], Vector3.new(-0.5,-2,1))
+		doo(game.Players.LocalPlayer.Character["RightUpperLeg"], Vector3.new(0.5,-2,1))
+	end
+end)
+ 
+r15waist.MouseButton1Click:connect(function()
+	if (game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15) then
+		if (game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso")) then
+			if (game.Players.LocalPlayer.Character.UpperTorso:FindFirstChild("Waist")) then
+				game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+			end
+		end
+	else
+		print('Not R15!')
+	end
+end)
+ 
+r15blockhats.MouseButton1Click:connect(function()
+	for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+		if (v:IsA("Tool")) then
+			v.Parent = game.Players.LocalPlayer.Backpack
+		end
+	end
+end)
+ 
+r15animations.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/uUR6pFVv", true))()
+end)
+ 
+r15invisible.MouseButton1Click:connect(function()
+	if (game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15) then
+		if (game.Players.LocalPlayer.Character:FindFirstChild("LowerTorso")) then
+			if (game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild("Root")) then
+				game.Players.LocalPlayer.Character.LowerTorso.Root:remove()
+			end
+		end
+	else
+		print('Not R15!')
+	end
+end)
+ 
+r15admin.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/CKbPg9NC", true))()
+end)
+ 
+r15antiafk.MouseButton1Click:connect(function()
+	local VirtualUser=game:service'VirtualUser'
+	game:service'Players'.LocalPlayer.Idled:connect(function()
+		VirtualUser:CaptureController()
+		VirtualUser:ClickButton2(Vector2.new())
+	end)
+end)
+ 
+dogscript.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/uB5LJvmb", true))()
+end)
+ 
+skatescript.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/XAXCaupJ"))()
+--[[ Made by machport
+Hat Needed: https://www.roblox.com/catalog/5063577434/COLD-STARE-SKATEBOARD
+]]--
+end)
+ 
+fathonhub.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/UmhaEvTT",true))()
+end)
+ 
+legacyhub.MouseButton1Click:connect(function()
+	loadstring(game:GetObjects("rbxassetid://1683559539")[1].Source)()
+end)
+ 
+phonegui.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/nScPDiay", true))()
+end)
+ 
+ezhub.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
+end)
+ 
+ragdoll.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/T7weKqag'),true))()
+end)
+ 
+topkek.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/uCaH93dP'),true))()
+end)
+ 
+loadtools.MouseButton1Click:connect(function()
+ 
+	for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+		if (v:IsA("Tool")) then
+			v.Parent = game.Players.LocalPlayer.Backpack
+		end
+	end
+end)
+ 
+savetools.MouseButton1Click:connect(function()
+	for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if (v:IsA("Tool")) then
+			v.Parent = game.Players.LocalPlayer
+		end
+	end
+end)
+ 
+r6blockhead.MouseButton1Click:connect(function()
+	game.Players.LocalPlayer.Character.Head.Mesh:destroy()
+end)
+ 
+r6creeper.MouseButton1Click:connect(function()
+	game.Players.LocalPlayer.Character.Head.Mesh:destroy()
+	function doo(limb, pos)
+		limb:BreakJoints()
+		local velocity = Instance.new("RocketPropulsion", limb)
+		velocity.CartoonFactor = 0
+		velocity.MaxSpeed = 30
+		velocity.MaxThrust = 9999
+		velocity.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+		velocity.Target = game.Players.LocalPlayer.Character.Torso
+		velocity.TargetOffset = pos
+		velocity:fire()
+		local b = Instance.new("BodyGyro", limb)
+	end
+	while wait() do
+		doo(game.Players.LocalPlayer.Character["Left Arm"], Vector3.new(-0.5,-2,-1))
+		doo(game.Players.LocalPlayer.Character["Right Arm"], Vector3.new(0.5,-2,-1))
+		doo(game.Players.LocalPlayer.Character["Left Leg"], Vector3.new(-0.5,-2,1))
+		doo(game.Players.LocalPlayer.Character["Right Leg"], Vector3.new(0.5,-2,1))
+	end
+end)
+ 
+r6Car.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/MonkoTubeYT/carscript/master/!carscript.lua',true))()
+end)
+ 
+r6pyramid.MouseButton1Click:connect(function()
+	local plr = game.Players.LocalPlayer
+	game:GetService("RunService").Stepped:Connect(function()
+		setsimulationradius(9e9,9e9)
+		plr.ReplicationFocus = workspace
+		settings().Physics.AllowSleep = false
+	end)
+ 
+	local runservice=game:service"RunService";
+	local player=game:service"Players"["LocalPlayer"];
+	local character=player["Character"];
+	local blacklisted="Head Torso HumanoidRootPart";
+	local limbs={};
+ 
+	character["Humanoid"].HipHeight=2;
+	--character["Head"]:FindFirstChildOfClass"SpecialMesh":Destroy();
+ 
+	for i,v in next,character:children() do
+		if (v.ClassName=="Part") and not blacklisted:find(v.Name) then
+			v:BreakJoints();
+			limbs[v.Name]=v;
+		end
+	end
+ 
+	while runservice["Heartbeat"]:Wait() do
+		limbs["Left Leg"].CFrame=character["HumanoidRootPart"].CFrame*CFrame.new(-1,-2,0);
+		limbs["Right Leg"].CFrame=character["HumanoidRootPart"].CFrame*CFrame.new(1,-2,0);
+		limbs["Left Arm"].CFrame=character["Left Leg"].CFrame*CFrame.new(-1,-2,0);
+		limbs["Right Arm"].CFrame=character["Right Leg"].CFrame*CFrame.new(1,-2,0);
+	end
+end)
+ 
+r6animations.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/uUR6pFVv", true))()
+end)
+ 
+r6flingscript.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/EntUzD5J", true))();
+end)
+ 
+r6admin.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/CKbPg9NC", true))()
+end)
+ 
+r6antiafk.MouseButton1Click:connect(function()
+	local VirtualUser=game:service'VirtualUser'
+	game:service'Players'.LocalPlayer.Idled:connect(function()
+		VirtualUser:CaptureController()
+		VirtualUser:ClickButton2(Vector2.new())
+	end)
+end)
+ 
+ 
+ 
+------ Scripts end ----
+ 
+function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+ 
+counter = 0
+ 
+while wait(0.1)do
+	rainbow1.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	rainbow2.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+ 
+	counter = counter + 0.01
+end
+end)
+ 
+ 
+OtherSection:NewButton("chat bypass", "swear", function()
+    loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+end)
+ 
+ 
+--HUBS
+local Hubs = Window:NewTab("More Random Scripts")
+local HubSection = Hubs:NewSection("de scripts")
+ 
+ 
+HubSection:NewButton("NDS HUB", "Gives natural disaster survival Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/9NLK7/93qjoadnlaknwldk/main/main'))()
+end)
+ 
+ 
+HubSection:NewButton("Invis Car", "drive in a car that no exist", function()
+    -- say "i wish i had an invisible car"
+ 
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+setreadonly(mt,false)
+mt.__namecall = newcclosure(function(self, ...)
+ local args = {...}
+ if getnamecallmethod() == 'FireServer' and self.Name == 'SayMessageRequest' then
+   if args[1] == "i wish i had an invisible car" then
+  game.StarterGui:SetCore("SendNotification", {
+Title = "Your car fine sir";
+Text = "IS HERE";
+Icon = ""; 
+Duration = 5; 
+})
+  local hi = Instance.new("Sound")
+hi.Name = "Sound"
+hi.SoundId = "http://www.roblox.com/asset/?id=5095315287"
+hi.Volume = 2
+hi.Looped = true
+hi.archivable = false
+hi.Parent = game.Workspace
+ 
+ 
+hi:Play()
+ 
+local speaker = game.Players.LocalPlayer
+local anims = speaker.Character.Animate
+local sit = anims.sit:FindFirstChildOfClass("Animation").AnimationId
+anims.idle:FindFirstChildOfClass("Animation").AnimationId = sit
+anims.walk:FindFirstChildOfClass("Animation").AnimationId = sit
+anims.run:FindFirstChildOfClass("Animation").AnimationId = sit
+anims.jump:FindFirstChildOfClass("Animation").AnimationId = sit
+ 
+speaker.Character:FindFirstChildOfClass('Humanoid').HipHeight = 3
+speaker.Character:FindFirstChildOfClass('Humanoid').WalkSpeed = 64
+wait(1)
+ end
+end
+ return old(self, unpack(args))
+end)
+end)
+ 
+ 
+HubSection:NewButton("EzHub", "gives person ezhub", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
+end)
+ 
+ 
+HubSection:NewButton("black hole", "works in games with unanchored items", function()
+    local UserInputService = game:GetService("UserInputService")
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Folder = Instance.new("Folder", game:GetService("Workspace"))
+local Part = Instance.new("Part", Folder)
+local Attachment1 = Instance.new("Attachment", Part)
+Part.Anchored = true
+Part.CanCollide = false
+Part.Transparency = 1
+local Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+local NetworkAccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    while game:GetService("RunService").RenderStepped:Wait() do
+        for _, Players in next, game:GetService("Players"):GetPlayers() do
+            if Players ~= game:GetService("Players").LocalPlayer then
+                Players.MaximumSimulationRadius = 0 
+                sethiddenproperty(Players, "SimulationRadius", 0) 
+            end 
+        end
+        game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)
+        setsimulationradius(math.huge) 
+    end 
+end) 
+coroutine.resume(NetworkAccess)
+local function ForcePart(v)
+    if v:IsA("Part") and v.Anchored == false and v.Parent:FindFirstChild("Humanoid") == nil and v.Parent:FindFirstChild("Head") == nil and v.Name ~= "Handle" then
+        Mouse.TargetFilter = v
+        for _, x in next, v:GetChildren() do
+            if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+                x:Destroy()
+            end
+        end
+        if v:FindFirstChild("Attachment") then
+            v:FindFirstChild("Attachment"):Destroy()
+        end
+        if v:FindFirstChild("AlignPosition") then
+            v:FindFirstChild("AlignPosition"):Destroy()
+        end
+        if v:FindFirstChild("Torque") then
+            v:FindFirstChild("Torque"):Destroy()
+        end
+        v.CanCollide = false
+        local Torque = Instance.new("Torque", v)
+        Torque.Torque = Vector3.new(100000, 100000, 100000)
+        local AlignPosition = Instance.new("AlignPosition", v)
+        local Attachment2 = Instance.new("Attachment", v)
+        Torque.Attachment0 = Attachment2
+        AlignPosition.MaxForce = 9999999999999999
+        AlignPosition.MaxVelocity = math.huge
+        AlignPosition.Responsiveness = 200
+        AlignPosition.Attachment0 = Attachment2 
+        AlignPosition.Attachment1 = Attachment1
+    end
+end
+for _, v in next, game:GetService("Workspace"):GetDescendants() do
+    ForcePart(v)
+end
+game:GetService("Workspace").DescendantAdded:Connect(function(v)
+    ForcePart(v)
+end)
+UserInputService.InputBegan:Connect(function(Key, Chat)
+    if Key.KeyCode == Enum.KeyCode.E and not Chat then
+       Updated = Mouse.Hit + Vector3.new(0, 5, 0)
+    end
+end)
+spawn(function()
+    while game:GetService("RunService").RenderStepped:Wait() do
+        Attachment1.WorldCFrame = Updated
+    end
+end)
+end)
+ 
+ 
+HubSection:NewButton("John Doe", "slap", function()
+    ---Convert By Im Patrick
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Im Patrick";
+    Text = "Netless Loaded";
+    Duration = 10;
+})
+ 
+HumanDied = false for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do if v:IsA("BasePart") and v.Name ~= 'Torso' and v.Name ~= 'Head' then  _G.netless=game:GetService("RunService").Heartbeat:connect(function() v.AssemblyLinearVelocity = Vector3.new(-30,0,0) sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge) sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999) end) end end  local plr = game.Players.LocalPlayer local char = plr.Character local srv = game:GetService('RunService') local ct = {}  char.Archivable = true local reanim = char:Clone() reanim.Name = 'Nexo '..plr.Name..'' fl=Instance.new('Folder',char) fl.Name ='Nexo' reanim.Animate.Disabled=false char.HumanoidRootPart:Destroy() char.Humanoid:ChangeState(16)  for i,v in next, char.Humanoid:GetPlayingAnimationTracks() do v:Stop() end char.Animate:Remove()  function create(part, parent, p, r) Instance.new("Attachment",part) Instance.new("AlignPosition",part) Instance.new("AlignOrientation",part) Instance.new("Attachment",parent) part.Attachment.Name = part.Name parent.Attachment.Name = part.Name part.AlignPosition.Attachment0 = part[part.Name] part.AlignOrientation.Attachment0 = part[part.Name] part.AlignPosition.Attachment1 = parent[part.Name] part.AlignOrientation.Attachment1 = parent[part.Name] parent[part.Name].Position = p or Vector3.new() part[part.Name].Orientation = r or Vector3.new() part.AlignPosition.MaxForce = 999999999 part.AlignPosition.MaxVelocity = math.huge part.AlignPosition.ReactionForceEnabled = false part.AlignPosition.Responsiveness = math.huge part.AlignOrientation.Responsiveness = math.huge part.AlignPosition.RigidityEnabled = false part.AlignOrientation.MaxTorque = 999999999 end  for i,v in next, char:GetDescendants() do if v:IsA('Accessory') then v.Handle:BreakJoints() create(v.Handle,reanim[v.Name].Handle) end end  char.Torso['Left Shoulder']:Destroy() char.Torso['Right Shoulder']:Destroy() char.Torso['Left Hip']:Destroy() char.Torso['Right Hip']:Destroy()  create(char['Torso'],reanim['Torso']) create(char['Left Arm'],reanim['Left Arm']) create(char['Right Arm'],reanim['Right Arm']) create(char['Left Leg'],reanim['Left Leg']) create(char['Right Leg'],reanim['Right Leg'])  for i,v in next, reanim:GetDescendants() do if v:IsA('BasePart') or v:IsA('Decal') then v.Transparency = 1 end end  reanim.Parent = fl  table.insert(ct,srv.Heartbeat:Connect(function() char.Torso.CFrame=reanim.Torso.CFrame char.Torso.Velocity=Vector3.new(99000000,99000000,0) end))  for i,v in next, reanim:GetDescendants() do if v:IsA('BasePart') then table.insert(ct,srv.RenderStepped:Connect(function() v.CanCollide = false end)) end end  for i,v in next, char:GetDescendants() do if v:IsA('BasePart') then table.insert(ct,srv.RenderStepped:Connect(function() v.CanCollide = false end)) end end  for i,v in next, reanim:GetDescendants() do if v:IsA('BasePart') then table.insert(ct,srv.Stepped:Connect(function() v.CanCollide = false end)) end end  for i,v in next, char:GetDescendants() do if v:IsA('BasePart') then table.insert(ct,srv.Stepped:Connect(function() v.CanCollide = false end)) end end  table.insert(ct,reanim.Humanoid.Died:Connect(function() plr.Character = char char:BreakJoints() reanim:Destroy() game.Players:Chat('-gr') _G.netless:Disconnect() HumanDied = true for _,v in pairs(ct) do v:Disconnect() end end))  plr.Character = reanim workspace.CurrentCamera.CameraSubject = reanim.Humanoid
+ 
+--Player Stuff--
+player = game:GetService("Players").LocalPlayer
+chara = player.Character
+ 
+ch = chara:GetChildren()
+for i = 1, #ch do
+if ch[i].Name == "Torso" then
+ch[i].roblox.Transparency = 1
+elseif ch[i].Name == "Head" then
+ch[i].face.Transparency = 1
+ch[i].Transparency = 1
+elseif ch[i].ClassName == "Accessory" or ch[i].ClassName == "Shirt" or ch[i].ClassName == "Pants" or ch[i].ClassName == "ShirtGraphic" then
+ch[i]:Destroy()
+end
+end
+ 
+ 
+--Outfit--
+New = function(Object, Parent, Name, Data)
+	local Object = Instance.new(Object)
+	for Index, Value in pairs(Data or {}) do
+		Object[Index] = Value
+	end
+	Object.Parent = Parent
+	Object.Name = Name
+	return Object
+end
+ 
+function ScatterEff(part)
+local eff1 = Instance.new("ParticleEmitter",part)
+eff1.Size = NumberSequence.new(.1)
+eff1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.9,0),NumberSequenceKeypoint.new(1,1)})
+eff1.LightEmission = 1
+eff1.Lifetime = NumberRange.new(1)
+eff1.Speed = NumberRange.new(1)
+eff1.Rate = 100
+eff1.VelocitySpread = 10000
+eff1.Texture = "rbxassetid://347504241"
+eff1.Color = ColorSequence.new(Color3.new(1,0,0))
+local eff2 = Instance.new("ParticleEmitter",part)
+eff2.Size = NumberSequence.new(.1)
+eff2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.9,0),NumberSequenceKeypoint.new(1,1)})
+eff2.LightEmission = 1
+eff2.Lifetime = NumberRange.new(1)
+eff2.Speed = NumberRange.new(1)
+eff2.Rate = 100
+eff2.VelocitySpread = 10000
+eff2.Texture = "rbxassetid://347504259"
+eff2.Color = ColorSequence.new(Color3.new(1,0,0))
+end
+ 
+function BurningEff(part)
+local eff1 = Instance.new("ParticleEmitter",part)
+eff1.Size = NumberSequence.new(.1)
+eff1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.2,0),NumberSequenceKeypoint.new(1,1)})
+eff1.LightEmission = 1
+eff1.Lifetime = NumberRange.new(1)
+eff1.Speed = NumberRange.new(0)
+eff1.Rate = 100
+eff1.Texture = "rbxassetid://347504241"
+eff1.Acceleration = Vector3.new(0,10,0)
+eff1.Color = ColorSequence.new(Color3.new(1,0,0))
+local eff2 = Instance.new("ParticleEmitter",part)
+eff2.Size = NumberSequence.new(.1)
+eff2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.2,0),NumberSequenceKeypoint.new(1,1)})
+eff2.LightEmission = 1
+eff2.Lifetime = NumberRange.new(1)
+eff2.Speed = NumberRange.new(0)
+eff2.Rate = 100
+eff2.Texture = "rbxassetid://347504259"
+eff2.Acceleration = Vector3.new(0,10,0)
+eff2.Color = ColorSequence.new(Color3.new(1,0,0))
+local eff3 = Instance.new("ParticleEmitter",part)
+eff3.Size = NumberSequence.new(1)
+eff3.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,1)})
+eff3.LightEmission = 1
+eff3.Lifetime = NumberRange.new(1)
+eff3.Speed = NumberRange.new(0)
+eff3.Rate = 100
+eff3.Texture = "rbxasset://textures/particles/fire_main.dds"
+eff3.Acceleration = Vector3.new(0,10,0)
+eff3.Color = ColorSequence.new(Color3.new(1,0,0))
+end
+ 
+FakeHead = New("Model",chara,"FakeHead",{})
+MainPart = New("Part",FakeHead,"MainPart",{FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(2, 1, 1),CFrame = CFrame.new(2.29537678, 7.81603718, 0.746068954, 0.00980896503, 0.00110200304, 0.999957919, -0.000536994543, 1.00000548, -0.00109680078, -0.99994874, -0.0005262224, 0.00980964955),CanCollide = false,TopSurface = Enum.SurfaceType.Smooth,})
+Mesh = New("SpecialMesh",MainPart,"Mesh",{Scale = Vector3.new(1.25, 1.25, 1.25),})
+Weld = New("ManualWeld",MainPart,"Weld",{Part0 = MainPart,Part1 = chara.Head,C0 = CFrame.new(0, 0, 0, 0.00980896503, -0.000536994543, -0.99994874, 0.00110200304, 1.00000548, -0.0005262224, 0.999957919, -0.00109680078, 0.00980964955),C1 = CFrame.new(5.96046448e-008, -8.58306885e-006, 0, 0.00980896503, -0.000536994543, -0.99994874, 0.00110200304, 1.00000548, -0.0005262224, 0.999957919, -0.00109680078, 0.00980964955),})
+Chest = New("Model",chara,"Chest",{})
+MainPart = New("Part",Chest,"MainPart",{Transparency = 1,Transparency = 1,FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(2, 2, 1),CFrame = CFrame.new(2.2937007, 6.31611967, 0.746871948, 0.00980956201, 0.00110224239, 0.999954581, -0.000537135813, 1.00000238, -0.00109703222, -0.99995023, -0.000526354474, 0.00981019717),CanCollide = false,LeftSurface = Enum.SurfaceType.Weld,RightSurface = Enum.SurfaceType.Weld,})
+Weld = New("ManualWeld",MainPart,"Weld",{Part0 = MainPart,Part1 = chara.Torso,C0 = CFrame.new(0, 0, 0, 0.009809535, -0.000537137908, -0.99994725, 0.00110225554, 1.00000858, -0.000526368851, 0.999961257, -0.00109705783, 0.00981026888),C1 = CFrame.new(5.96046448e-008, -9.05990601e-006, -2.38418579e-007, 0.00980956666, -0.000537143264, -0.99995023, 0.00110225484, 1.00000238, -0.000526361808, 0.999954581, -0.00109704456, 0.00981020182),})
+CorruptedPart = New("Part",Chest,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.400000006, 0.800000072, 1),CFrame = CFrame.new(2.28977966, 7.11656427, 1.34486222, -0.00110228383, -0.00980954897, -0.9999578, -1.00000536, 0.000536905834, 0.00109708123, 0.000526248943, 0.99994868, -0.00981033035),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.0011022957, -0.999999225, 0.000526249292, -0.00980958622, 0.000536918582, 0.99995172, -0.999951243, 0.0010970803, -0.00981026702),C1 = CFrame.new(-0.598430753, 0.800122261, 0.00106739998, 0.00980956666, -0.000537143264, -0.99995023, 0.00110225484, 1.00000238, -0.000526361808, 0.999954581, -0.00109704456, 0.00981020182),})
+CorruptedPart = New("Part",Chest,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.400000006, 0.400000066, 1),CFrame = CFrame.new(2.29174757, 6.71645212, 1.54485857, -0.00110228383, -0.00980954897, -0.9999578, -1.00000536, 0.000536905834, 0.00109708123, 0.000526248943, 0.99994868, -0.00981033035),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.0011022957, -0.999999225, 0.000526249292, -0.00980958622, 0.000536918582, 0.99995172, -0.999951243, 0.0010970803, -0.00981026702),C1 = CFrame.new(-0.798183441, 0.399908543, 0.00543618202, 0.00980956666, -0.000537143264, -0.99995023, 0.00110225484, 1.00000238, -0.000526361808, 0.999954581, -0.00109704456, 0.00981020182),})
+LeftArm = New("Model",chara,"LeftArm",{})
+MainPart = New("Part",LeftArm,"MainPart",{Transparency = 1,Transparency = 1,FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(1, 2, 1),CFrame = CFrame.new(1.90889204, 6.31596565, 3.24640989, -0.0484240092, -0.0324009918, 0.998301268, -0.00117100019, 0.999474883, 0.0323822871, -0.998826265, 0.000399069104, -0.0484365262),CanCollide = false,})
+Weld = New("ManualWeld",MainPart,"Weld",{Part0 = MainPart,Part1 = chara["Left Arm"],C0 = CFrame.new(0, 0, 0, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),C1 = CFrame.new(0, -8.10623169e-006, -2.38418579e-007, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+CorruptedPart = New("Part",LeftArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.400000006, 0.200000003),CFrame = CFrame.new(1.48370504, 6.50245714, 2.8663168, -0.048417028, -0.0324150361, 0.998301387, -0.00116700074, 0.999474525, 0.03239654, -0.998826742, 0.000403525919, -0.0484294258),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.048417028, -0.00116700074, -0.998826623, -0.0324150361, 0.999474466, 0.000403525832, 0.998301208, 0.0323965363, -0.0484294109),C1 = CFrame.new(0.400017738, 0.200018406, -0.400015235, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+CorruptedPart = New("Part",LeftArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.600000024, 0.200000003),CFrame = CFrame.new(1.51924801, 6.60332775, 3.66543078, -0.048417028, -0.0324150361, 0.998301387, -0.00116700074, 0.999474525, 0.03239654, -0.998826742, 0.000403525919, -0.0484294258),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.048417028, -0.00116700074, -0.998826623, -0.0324150361, 0.999474466, 0.000403525832, 0.998301208, 0.0323965363, -0.0484294109),C1 = CFrame.new(-0.399997473, 0.300003052, -0.399972558, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+EffCorruptedPart = New("Part",LeftArm,"EffCorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 1, 1),CFrame = CFrame.new(1.92512023, 5.81624889, 3.24619365, -0.048417028, -0.0324150361, 0.998301387, -0.00116700074, 0.999474525, 0.03239654, -0.998826742, 0.000403525919, -0.0484294258),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",EffCorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",EffCorruptedPart,"Weld",{Part0 = EffCorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.048417028, -0.00116700074, -0.998826623, -0.0324150361, 0.999474466, 0.000403525832, 0.998301208, 0.0323965363, -0.0484294109),C1 = CFrame.new(1.52587891e-005, -0.49998045, 2.90870667e-005, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+CorruptedPart = New("Part",LeftArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.800000072, 0.200000003),CFrame = CFrame.new(2.31463432, 6.72918367, 3.62673688, -0.048417028, -0.0324150361, 0.998301387, -0.00116700074, 0.999474525, 0.03239654, -0.998826742, 0.000403525919, -0.0484294258),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.048417028, -0.00116700074, -0.998826623, -0.0324150361, 0.999474466, 0.000403525832, 0.998301208, 0.0323965363, -0.0484294109),C1 = CFrame.new(-0.400012016, 0.400006294, 0.400012136, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+CorruptedPart = New("Part",LeftArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.200000003, 0.200000003),CFrame = CFrame.new(1.50631011, 6.40297413, 3.26581192, -0.048417028, -0.0324150361, 0.998301387, -0.00116700074, 0.999474525, 0.03239654, -0.998826742, 0.000403525919, -0.0484294258),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.048417028, -0.00116700074, -0.998826623, -0.0324150361, 0.999474466, 0.000403525832, 0.998301208, 0.0323965363, -0.0484294109),C1 = CFrame.new(1.3589859e-005, 0.100014687, -0.400020242, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+CorruptedPart = New("Part",LeftArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.400000036, 0.200000003),CFrame = CFrame.new(1.92179501, 6.51633835, 3.64602208, -0.048417028, -0.0324150361, 0.998301387, -0.00116700074, 0.999474525, 0.03239654, -0.998826742, 0.000403525919, -0.0484294258),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.048417028, -0.00116700074, -0.998826623, -0.0324150361, 0.999474466, 0.000403525832, 0.998301208, 0.0323965363, -0.0484294109),C1 = CFrame.new(-0.40000248, 0.200008869, 1.37090683e-005, -0.0484240092, -0.00117100019, -0.998826265, -0.0324009918, 0.999474883, 0.000399069104, 0.998301268, 0.0323822871, -0.0484365262),})
+BurningEff(EffCorruptedPart)
+LeftLeg = New("Model",chara,"LeftLeg",{})
+MainPart = New("Part",LeftLeg,"MainPart",{Transparency = 1,Transparency = 1,FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(1, 2, 1),CFrame = CFrame.new(2.2865479, 1.31659603, 1.24781799, 0.00980953407, 0.00110225566, 0.999961138, -0.000537137908, 1.00000858, -0.00109705783, -0.99994719, -0.000526368851, 0.00981026888),CanCollide = false,BottomSurface = Enum.SurfaceType.Smooth,})
+Weld = New("ManualWeld",MainPart,"Weld",{Part0 = MainPart,Part1 = chara["Left Leg"],C0 = CFrame.new(0, 0, 0, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),C1 = CFrame.new(0, -8.58306885e-006, -2.38418579e-007, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+EffCorruptedPart = New("Part",LeftLeg,"EffCorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 0.200000048, 1),CFrame = CFrame.new(2.28007793, 0.400032878, 1.25993299, 1.00001979, -3.03611159e-007, -5.47617674e-007, 5.67175448e-007, 1.00001717, -5.60779881e-007, -1.86450779e-006, 9.50574758e-007, 0.99998951),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",EffCorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",EffCorruptedPart,"Weld",{Part0 = EffCorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 1, 5.86369708e-007, -2.15602267e-006, -2.8440752e-007, 0.999998569, 9.76819592e-007, -8.39119252e-007, -5.34477465e-007, 0.999998569),C1 = CFrame.new(-0.0116856098, -0.916567385, -0.00534534454, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.600000024, 0.200000003),CFrame = CFrame.new(1.88013697, 0.800038397, 0.859943509, 1.00001979, -3.03611159e-007, -5.47617674e-007, 5.67175448e-007, 1.00001717, -5.60779881e-007, -1.86450779e-006, 9.50574758e-007, 0.99998951),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 1, 5.86369708e-007, -2.15602267e-006, -2.8440752e-007, 0.999998569, 9.76819592e-007, -8.39119252e-007, -5.34477465e-007, 0.999998569),C1 = CFrame.new(0.3841483, -0.516796231, -0.40962553, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.800000012, 0.200000003),CFrame = CFrame.new(2.69002914, 0.915953577, 0.851962805, 0.999971032, 0.0011022269, -0.00980960391, -0.00109704852, 1.00001776, 0.000537177373, 0.00981036108, -0.000526409131, 0.999942601),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999951303, -0.0010970087, 0.00981015898, 0.00110222446, 0.999999166, -0.000526388001, -0.00980970077, 0.00053719338, 0.99995172),C1 = CFrame.new(0.400011122, -0.399985313, 0.400013685, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.800000012, 0.200000003),CFrame = CFrame.new(1.88013721, 0.900040269, 1.65993917, 1.00001979, -3.03611159e-007, -5.47617674e-007, 5.67175448e-007, 1.00001717, -5.60779881e-007, -1.86450779e-006, 9.50574758e-007, 0.99998951),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 1, 5.86369708e-007, -2.15602267e-006, -2.8440752e-007, 0.999998569, 9.76819592e-007, -8.39119252e-007, -5.34477465e-007, 0.999998569),C1 = CFrame.new(-0.415866137, -0.41721642, -0.40188694, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.200000003, 0.200000003),CFrame = CFrame.new(1.88013721, 0.600035727, 1.25993288, 1.00001979, -3.03611159e-007, -5.47617674e-007, 5.67175448e-007, 1.00001717, -5.60779881e-007, -1.86450779e-006, 9.50574758e-007, 0.99998951),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 1, 5.86369708e-007, -2.15602267e-006, -2.8440752e-007, 0.999998569, 9.76819592e-007, -8.39119252e-007, -5.34477465e-007, 0.999998569),C1 = CFrame.new(-0.0157161951, -0.717007458, -0.405481935, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.400000006, 0.200000003),CFrame = CFrame.new(2.28007793, 0.700037479, 1.65993929, 1.00001967, -3.84054147e-007, 3.90969217e-006, 6.35045581e-007, 1.00001717, -5.60838998e-007, -6.19795173e-006, 9.32147486e-007, 0.99998951),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 1, 6.5424797e-007, -6.48946025e-006, -3.64865258e-007, 0.999998629, 9.58411874e-007, 3.61912225e-006, -5.34497644e-007, 0.999998629),C1 = CFrame.new(-0.411835551, -0.616776347, -0.00175023079, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 1.20000005, 0.200000003),CFrame = CFrame.new(2.68018699, 1.10004401, 1.65993941, 1.00001967, -3.84054147e-007, 3.90969217e-006, 6.35045581e-007, 1.00001717, -5.60838998e-007, -6.19795173e-006, 9.32147486e-007, 0.99998951),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 1, 6.5424797e-007, -6.48946025e-006, -3.64865258e-007, 0.999998629, 9.58411874e-007, 3.61912225e-006, -5.34497644e-007, 0.999998629),C1 = CFrame.new(-0.408125639, -0.216332912, 0.397896528, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+CorruptedPart = New("Part",LeftLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.600000024, 0.200000003),CFrame = CFrame.new(2.68596959, 0.816166699, 1.25195313, 0.999971032, 0.0011022269, -0.00980960391, -0.00109704852, 1.00001776, 0.000537177373, 0.00981036108, -0.000526409131, 0.999942601),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999951303, -0.0010970087, 0.00981015898, 0.00110222446, 0.999999166, -0.000526388001, -0.00980970077, 0.00053719338, 0.99995172),C1 = CFrame.new(5.20944595e-005, -0.499986172, 0.399987936, 0.00980953407, -0.000537137908, -0.99994719, 0.00110225566, 1.00000858, -0.000526368851, 0.999961138, -0.00109705783, 0.00981026888),})
+ScatterEff(EffCorruptedPart)
+RightArm = New("Model",chara,"RightArm",{})
+MainPart = New("Part",RightArm,"MainPart",{Transparency = 1,Transparency = 1,FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(1, 2, 1),CFrame = CFrame.new(2.011096, 6.31690788, -3.92582893, 0.00918400101, -0.262283146, 0.964947343, 0.259330034, 0.932596445, 0.251021653, -0.965745091, 0.247934431, 0.0765828639),CanCollide = false,})
+Weld = New("ManualWeld",MainPart,"Weld",{Part0 = MainPart,Part1 = chara["Right Arm"],C0 = CFrame.new(0, 0, 0, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),C1 = CFrame.new(-2.86102295e-006, -9.05990601e-006, -2.38418579e-006, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+Hitbox = New("Part",RightArm,"Hitbox",{BrickColor = BrickColor.new("Really black"),Transparency = 1,Transparency = 1,Size = Vector3.new(1, 4, 1),CFrame = CFrame.new(22.2733669, 5.0842762, -22.1737366, -0.964945257, -0.262290984, 0.00919180829, -0.251027077, 0.93259424, 0.259333313, -0.0765930116, 0.247935042, -0.965744138),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Weld = New("ManualWeld",Hitbox,"Weld",{Part0 = Hitbox,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964945257, -0.251027077, -0.0765930116, -0.262290984, 0.93259424, 0.247935042, 0.00919180829, 0.259333313, -0.965744138),C1 = CFrame.new(-1.52587891e-005, -1.00003147, -1.71661377e-005, 0.0091838371, 0.259330064, -0.965745151, -0.262283117, 0.932596445, 0.247934505, 0.964947283, 0.251021653, 0.0765827149),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 2, 1),CFrame = CFrame.new(2.011096, 6.3169179, -3.92581391, -0.964945257, -0.262290984, 0.00919180829, -0.251027077, 0.93259424, 0.259333313, -0.0765930116, 0.247935042, -0.965744138),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964945138, -0.251027018, -0.0765930042, -0.262290984, 0.932594121, 0.247935027, 0.00919180084, 0.259333313, -0.965744197),C1 = CFrame.new(-1.1920929e-005, 1.28746033e-005, 3.57627869e-006, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 0.600000024, 0.400000036),CFrame = CFrame.new(2.14866924, 6.03215551, -4.72580194, -0.964945078, 0.262291819, -0.00918725226, -0.251029015, -0.932593465, -0.259333432, -0.0765890032, -0.247936144, 0.965744317),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("SpecialMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),MeshType = Enum.MeshType.Wedge,})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964944899, -0.251028955, -0.0765889958, 0.262291819, -0.932593465, -0.247936144, -0.00918724574, -0.259333432, 0.965744257),C1 = CFrame.new(0.699988842, -0.499982834, 7.62939453e-006, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 1.20000005, 0.600000024),CFrame = CFrame.new(2.63876629, 4.02682734, -4.32773018, -0.964945078, 0.262291819, -0.00918725226, -0.251029015, -0.932593465, -0.259333432, -0.0765890032, -0.247936144, 0.965744317),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("SpecialMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),MeshType = Enum.MeshType.Wedge,})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964944899, -0.251028955, -0.0765889958, 0.262291819, -0.932593465, -0.247936144, -0.00918724574, -0.259333432, 0.965744257),C1 = CFrame.new(-0.199987888, -2.39999342, 3.02791595e-005, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 1, 0.600000024),CFrame = CFrame.new(1.62134135, 7.81954479, -3.94021821, 0.964945078, -0.262291819, -0.00918725226, 0.251029015, 0.932593465, -0.259333432, 0.0765890032, 0.247936144, 0.965744317),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("SpecialMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),MeshType = Enum.MeshType.Wedge,})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.964944899, 0.251028955, 0.0765889958, -0.262291819, 0.932593465, 0.247936144, -0.00918724574, -0.259333432, 0.965744257),C1 = CFrame.new(0.399995804, 1.5000124, -2.38418579e-007, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 0.600000024, 0.400000036),CFrame = CFrame.new(2.35483098, 5.18234444, -4.53787422, -0.964945078, 0.262291819, -0.00918725226, -0.251029015, -0.932593465, -0.259333432, -0.0765890032, -0.247936144, 0.965744317),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("SpecialMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),MeshType = Enum.MeshType.Wedge,})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964944899, -0.251028955, -0.0765889958, 0.262291819, -0.932593465, -0.247936144, -0.00918724574, -0.259333432, 0.965744257),C1 = CFrame.new(0.300010204, -1.29999256, 1.40666962e-005, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 1, 0.600000024),CFrame = CFrame.new(1.88730097, 6.99068737, -4.57445002, -0.964945078, 0.262291819, -0.00918725226, -0.251029015, -0.932593465, -0.259333432, -0.0765890032, -0.247936144, 0.965744317),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("SpecialMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),MeshType = Enum.MeshType.Wedge,})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964944899, -0.251028955, -0.0765889958, 0.262291819, -0.932593465, -0.247936144, -0.00918724574, -0.259333432, 0.965744257),C1 = CFrame.new(0.799996853, 0.50001812, 4.29153442e-006, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+CorruptedPart = New("Part",RightArm,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 0.800000072, 0.600000024),CFrame = CFrame.new(2.37646794, 4.9594202, -4.07979012, -0.964945316, -0.262290984, 0.00918756705, -0.251028091, 0.932593942, 0.259333163, -0.0765890256, 0.247935995, -0.965744197),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, -0.964945138, -0.251028031, -0.0765890107, -0.262290955, 0.932593882, 0.247935966, 0.0091875596, 0.259333193, -0.965744257),C1 = CFrame.new(-0.199994564, -1.39999104, 1.52587891e-005, 0.00918400101, 0.259330034, -0.965745091, -0.262283146, 0.932596445, 0.247934431, 0.964947343, 0.251021653, 0.0765828639),})
+RightLeg = New("Model",chara,"RightLeg",{})
+MainPart = New("Part",RightLeg,"MainPart",{Transparency = 1,Transparency = 1,FormFactor = Enum.FormFactor.Symmetric,Size = Vector3.new(1, 2, 1),CFrame = CFrame.new(2.29641008, 1.31540966, 0.248092994, 0.00933599845, 0.00110999751, 0.999955773, -0.0030579993, 0.999994755, -0.00108149007, -0.99995178, -0.0030477671, 0.00933934376),CanCollide = false,BottomSurface = Enum.SurfaceType.Smooth,})
+Weld = New("ManualWeld",MainPart,"Weld",{Part0 = MainPart,Part1 = chara["Right Leg"],C0 = CFrame.new(0, 0, 0, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),C1 = CFrame.new(2.98023224e-008, -8.58306885e-006, 2.38418579e-007, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.200000003, 0.200000003),CFrame = CFrame.new(2.70045996, 1.61376095, -0.149078026, 0.999955833, 0.00111049914, -0.0093326522, -0.00108199986, 0.999994755, 0.00305823679, 0.00933599938, -0.00304800388, 0.999951839),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955893, -0.00108199986, 0.00933599938, 0.00111049926, 0.999994755, -0.00304800388, -0.0093326522, 0.00305823679, 0.99995178),C1 = CFrame.new(0.400011688, 0.300008655, 0.400000095, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.600000024, 0.200000003),CFrame = CFrame.new(1.90071809, 1.81462395, -0.157150015, 0.999955714, 0.00111050205, -0.0093366541, -0.00108199974, 0.999994755, 0.00305724167, 0.00933999754, -0.00304700364, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111050217, 0.999994755, -0.00304700388, -0.00933665317, 0.00305724121, 0.99995178),C1 = CFrame.new(0.400002658, 0.50000751, -0.399999142, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.400000036, 0.200000003),CFrame = CFrame.new(1.896873, 1.71584904, 0.243133992, 0.999955714, 0.00111050205, -0.0093366541, -0.00108199974, 0.999994755, 0.00305724167, 0.00933999754, -0.00304700364, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111050217, 0.999994755, -0.00304700388, -0.00933665317, 0.00305724121, 0.99995178),C1 = CFrame.new(4.14252281e-006, 0.400008917, -0.399998784, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.800000072, 0.200000003),CFrame = CFrame.new(1.89314091, 1.71706903, 0.643112063, 0.999955714, 0.00111050205, -0.0093366541, -0.00108199974, 0.999994755, 0.00305724167, 0.00933999754, -0.00304700364, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111050217, 0.999994755, -0.00304700388, -0.00933665317, 0.00305724121, 0.99995178),C1 = CFrame.new(-0.399993181, 0.400005698, -0.399996519, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+EffCorruptedPart = New("Part",RightLeg,"EffCorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(1, 1.20000005, 1),CFrame = CFrame.new(2.29597116, 0.915416002, 0.249298006, 0.999955714, 0.00111051137, -0.00933665317, -0.00108199974, 0.999994755, 0.00305824191, 0.00933999754, -0.00304800365, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",EffCorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",EffCorruptedPart,"Weld",{Part0 = EffCorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111051148, 0.999994755, -0.00304800388, -0.00933665223, 0.00305824145, 0.99995178),C1 = CFrame.new(1.41263008e-005, -0.399995744, 5.00679016e-006, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.400000006, 0.200000003),CFrame = CFrame.new(2.300596, 1.71419013, -0.153122023, 0.999955714, 0.00111051137, -0.00933665317, -0.00108199974, 0.999994755, 0.00305824191, 0.00933999754, -0.00304800365, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111051148, 0.999994755, -0.00304800388, -0.00933665223, 0.00305824145, 0.99995178),C1 = CFrame.new(0.400015235, 0.400005817, 7.39097595e-006, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.600000024, 0.200000003),CFrame = CFrame.new(2.69322205, 1.81620288, 0.650299072, 0.999955714, 0.00111051137, -0.00933665317, -0.00108199974, 0.999994755, 0.00305824191, 0.00933999754, -0.00304800365, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111051148, 0.999994755, -0.00304800388, -0.00933665223, 0.00305824145, 0.99995178),C1 = CFrame.new(-0.400013447, 0.500005245, 0.400009155, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+CorruptedPart = New("Part",RightLeg,"CorruptedPart",{BrickColor = BrickColor.new("Really black"),Material = Enum.Material.Granite,Size = Vector3.new(0.200000003, 0.400000006, 0.200000003),CFrame = CFrame.new(2.69684124, 1.71498096, 0.250625998, 0.999955714, 0.00111051137, -0.00933665317, -0.00108199974, 0.999994755, 0.00305824191, 0.00933999754, -0.00304800365, 0.999951899),CanCollide = false,BackSurface = Enum.SurfaceType.SmoothNoOutlines,BottomSurface = Enum.SurfaceType.SmoothNoOutlines,FrontSurface = Enum.SurfaceType.SmoothNoOutlines,LeftSurface = Enum.SurfaceType.SmoothNoOutlines,RightSurface = Enum.SurfaceType.SmoothNoOutlines,TopSurface = Enum.SurfaceType.SmoothNoOutlines,Color = Color3.new(0.0666667, 0.0666667, 0.0666667),})
+Mesh = New("BlockMesh",CorruptedPart,"Mesh",{Scale = Vector3.new(1.10000002, 1.10000002, 1.10000002),})
+Weld = New("ManualWeld",CorruptedPart,"Weld",{Part0 = CorruptedPart,Part1 = MainPart,C0 = CFrame.new(0, 0, 0, 0.999955773, -0.00108199974, 0.00933999848, 0.00111051148, 0.999994755, -0.00304800388, -0.00933665223, 0.00305824145, 0.99995178),C1 = CFrame.new(-1.63316727e-005, 0.400005937, 0.400005102, 0.00933599845, -0.0030579993, -0.99995178, 0.00110999751, 0.999994755, -0.0030477671, 0.999955773, -0.00108149007, 0.00933934376),})
+ScatterEff(EffCorruptedPart)
+ 
+sa = RightArm:GetChildren()
+for i = 1, #sa do
+ScatterEff(sa[i])
+end
+ 
+local eff1 = Instance.new("ParticleEmitter",EyeFire)
+eff1.Size = NumberSequence.new(.1)
+eff1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.2,0),NumberSequenceKeypoint.new(1,1)})
+eff1.LightEmission = 1
+eff1.Lifetime = NumberRange.new(.5)
+eff1.Speed = NumberRange.new(1)
+eff1.EmissionDirection = "Front"
+eff1.Rate = 100
+eff1.Texture = "rbxassetid://347504241"
+eff1.Acceleration = Vector3.new(0,10,0)
+eff1.Color = ColorSequence.new(Color3.new(1,0,0))
+local eff2 = Instance.new("ParticleEmitter",EyeFire)
+eff2.Size = NumberSequence.new(.1)
+eff2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.2,0),NumberSequenceKeypoint.new(1,1)})
+eff2.LightEmission = 1
+eff2.Lifetime = NumberRange.new(.5)
+eff2.Speed = NumberRange.new(1)
+eff2.EmissionDirection = "Front"
+eff2.Rate = 100
+eff2.Texture = "rbxassetid://347504259"
+eff2.Acceleration = Vector3.new(0,10,0)
+eff2.Color = ColorSequence.new(Color3.new(1,0,0))
+local eff3 = Instance.new("ParticleEmitter",EyeFire)
+eff3.Size = NumberSequence.new(.1)
+eff3.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,1)})
+eff3.LightEmission = 1
+eff3.Lifetime = NumberRange.new(.5)
+eff3.Speed = NumberRange.new(1)
+eff3.EmissionDirection = "Front"
+eff3.Rate = 100
+eff3.Texture = "rbxasset://textures/particles/fire_main.dds"
+eff3.Acceleration = Vector3.new(0,10,0)
+eff3.Color = ColorSequence.new(Color3.new(1,0,0))
+ 
+--Sounds--
+slashsnd = New("Sound",chara.Torso,"Slash",{SoundId = "rbxassetid://28144425",PlaybackSpeed = .7,Volume = 5})
+hitsnd = New("Sound",chara.Torso,"Hit",{SoundId = "rbxassetid://429400881",PlaybackSpeed = .7,Volume = 5})
+telesnd = New("Sound",chara.Torso,"Tele",{SoundId = "rbxassetid://2767090",PlaybackSpeed = .7,Volume = 5})
+burnsnd = New("Sound",chara.Torso,"Burn",{SoundId = "rbxassetid://32791565",PlaybackSpeed = .7,Volume = 5})
+music1 = New("Sound",chara.Torso,"Music1",{SoundId = "rbxassetid://151038517",PlaybackSpeed = .5,Volume = 10,Looped = true})
+music2 = New("Sound",chara.Torso,"Music2",{SoundId = "rbxassetid://11984351",PlaybackSpeed = .2,Volume = 5,Looped = true})
+deathmus = New("Sound",chara.Torso,"DeathMus",{SoundId = "rbxassetid://19094700",PlaybackSpeed = .5,Volume = 5,Looped = true})
+deathex = New("Sound",chara.Torso,"DeathEx",{SoundId = "rbxassetid://11984351",PlaybackSpeed = 1,Volume = 5})
+music1:Play()
+music2:Play()
+ 
+--Animations--
+swinganim = chara.Humanoid:LoadAnimation(New("Animation",chara,"Swing",{AnimationId = "rbxassetid://186934658"}))
+ 
+--Name Tag--
+local naeeym = Instance.new("BillboardGui",chara)
+naeeym.Size = UDim2.new(0,100,0,40)
+naeeym.StudsOffset = Vector3.new(0,2,0)
+naeeym.Adornee = chara.Head
+local tecks = Instance.new("TextLabel",naeeym)
+tecks.BackgroundTransparency = 1
+tecks.BorderSizePixel = 0
+tecks.Text = ""
+tecks.Font = "Fantasy"
+tecks.FontSize = "Size24"
+tecks.TextStrokeTransparency = 0
+tecks.TextStrokeColor3 = Color3.new(0,0,0)
+tecks.TextColor3 = Color3.new(0,0,0)
+tecks.Size = UDim2.new(1,0,0.5,0)
+ 
+--Skybox--
+skybox = Instance.new("Part",chara)
+skybox.Size = Vector3.new(0,0,0)
+skybox.Anchored = true
+skybox.CanCollide = true
+skyboxmesh = Instance.new("SpecialMesh",skybox)
+skyboxmesh.MeshId = ""
+skyboxmesh.TextureId = ""
+skyboxmesh.VertexColor = Vector3.new(1,0,0)
+skyboxmesh.Scale = Vector3.new(-3000,-1000,-3000)
+ 
+--Soul Steal--
+function SoulSteal(pos)
+local soulst = coroutine.wrap(function()
+local soul = Instance.new("Part",chara)
+soul.Size = Vector3.new(0,0,0)
+soul.CanCollide = false
+soul.Anchored = false
+soul.Position = pos
+soul.CFrame = CFrame.new(pos.X,pos.Y,pos.Z)
+soul.Transparency = 1
+local ptc = Instance.new("ParticleEmitter",soul)
+ptc.Texture = "http://www.roblox.com/asset/?id=413366101"
+ptc.Size = NumberSequence.new(.5)
+ptc.LockedToPart = true
+ptc.Speed = NumberRange.new(0)
+ptc.Lifetime = NumberRange.new(9999)
+local bodpos = Instance.new("BodyPosition",soul)
+bodpos.Position = pos
+wait(2)
+soul.Touched:connect(function(hit)
+if hit.Parent == chara then
+soul:Destroy()
+end
+end)
+while soul do
+wait(.1)
+bodpos.Position = chara.Torso.Position
+end
+end)
+soulst()
+end
+ 
+--Death of a Mortal--
+function KillMortal(hitdude)
+end
+ 
+--Arm Touch--
+bladeactive = false
+Hitbox.Touched:connect(function(hit)
+if bladeactive == true then
+if hit.Parent:FindFirstChild("Humanoid")~= nil and hit.Parent:FindFirstChild("HasBeenHit")== nil and hit.Parent ~= chara then
+hitsnd:Play()
+KillMortal(hit.Parent)
+end
+end
+end)
+ 
+--Teleport--
+function Teleport(pos)
+telesnd:Play()
+local ch = chara:GetChildren()
+for i = 1, #ch do
+if ch[i].ClassName == "Part" and ch[i].Name ~= "HumanoidRootPart" then
+local trace = Instance.new("Part",game.Workspace)
+trace.Size = ch[i].Size
+trace.Material = "Neon"
+trace.BrickColor = BrickColor.new("Really black")
+trace.Transparency = .3
+trace.CanCollide = false
+trace.Anchored = true
+trace.CFrame = ch[i].CFrame
+if ch[i].Name == "Head" then
+mehs = Instance.new("CylinderMesh",trace)
+mehs.Scale = Vector3.new(1.25,1.25,1.25)
+end
+tracedisappear = coroutine.wrap(function()
+wait(1)
+for i = 1, 7 do
+wait(.1)
+trace.Transparency = trace.Transparency + .1
+end
+trace:Destroy()
+end)
+tracedisappear()
+end
+end
+chara.Torso.CFrame = CFrame.new(pos.X,pos.Y,pos.Z)
+end
+ 
+--Grab--
+function Grab(mouse)
+local hit = mouse.Target
+if hit ~= nil then
+if hit.Parent:FindFirstChild("Humanoid")~=nil then
+local torsy = nil
+if hit.Parent:FindFirstChild("Torso")~=nil then
+torsy = hit.Parent.Torso
+elseif hit.Parent:FindFirstChild("UpperTorso")~=nil then
+torsy = hit.Parent.UpperTorso
+end
+local bodpos = Instance.new("BodyPosition",torsy)
+bodpos.Position = torsy.Position
+wait(1)
+burnsnd:Play()
+hit.Parent.Humanoid.MaxHealth = 100
+bodpos.Position = bodpos.Position + Vector3.new(0,4,0)
+for i = 1, 10 do
+wait(.1)
+BurningEff(torsy)
+hit.Parent.Humanoid.Health = hit.Parent.Humanoid.Health - 10
+end
+KillMortal(hit.Parent)
+end
+else end
+end
+ 
+--Button1Down--
+dell = false
+function onButton1Down()
+if dell == false then
+dell = true
+swinganim:Play()
+bladeactive = true
+slashsnd:Play()
+wait(.7)
+bladeactive = false
+dell = false
+swinganim:Stop()
+end
+end
+ 
+--KeyDowns--
+function onKeyDown(key)
+if key == "z" then
+Teleport(Mouse.Hit.p + Vector3.new(0,2,0))
+elseif key == "x" then
+Grab(Mouse)
+end
+end
+ 
+--Mouse Functions--
+Mouse = player:GetMouse()
+if Mouse then
+Mouse.Button1Down:connect(onButton1Down)
+Mouse.KeyDown:connect(onKeyDown)
+end
+ 
+--Death--
+chara.Humanoid.Died:connect(function()
+local pat = Instance.new("Part",game.Workspace)
+pat.Transparency = 1
+pat.Anchored = true
+pat.CFrame = chara.Torso.CFrame
+naeeym.Parent = pat
+naeeym.Adornee = pat
+skybox.Parent = game.Workspace
+tecks.Text = "BAD CHOICE"
+tecks.FontSize = "Size48"
+tecks.TextColor3 = Color3.new(1,0,0)
+music1:Stop()
+music2:Stop()
+deathmus.Parent = game.Workspace
+deathex.Parent = game.Workspace
+deathmus:Play()
+deathex:Play()
+end)
+ 
+--Loop Function--
+while true do
+wait(.01)
+chance = math.random(0,100)
+if chance < 10 then
+sel = math.random(1,3)
+if sel == 1 then
+tecks.Text = ""
+elseif sel == 2 then
+tecks.Text = ""
+elseif sel == 3 then
+tecks.Text = ""
+end
+else tecks.Text = ""
+end
+if chara.Humanoid.Health > 0 then
+chara.Humanoid.MaxHealth = math.huge
+chara.Humanoid.Health = math.huge
+chara["Left Arm"].Anchored = false
+chara["Right Arm"].Anchored = false
+chara["Left Leg"].Anchored = false
+chara["Right Leg"].Anchored = false
+chara.Torso.Anchored = false
+ch = chara:GetChildren()
+for i = 1, #ch do
+if ch[i].ClassName == "Accessory" or ch[i].ClassName == "Hat" then
+ch[i]:Destroy()
+end
+end
+tools = player.Backpack:GetChildren()
+for i = 1, #tools do
+if tools[i].ClassName == "HopperBin" then
+tools[i]:Destroy()
+end
+end
+skybox.CFrame = skybox.CFrame * CFrame.fromEulerAnglesXYZ(0,math.rad(1),0)
+tecks.Position = UDim2.new(0,math.random(-3,3),0,math.random(-3,3))
+local jtrace = Instance.new("Part",game.Workspace)
+jtrace.Name = "JDTrace"
+jtrace.Size = Vector3.new(10,0,10)
+jtrace.Position = chara.Torso.Position
+jtrace.CFrame = chara.Torso.CFrame - Vector3.new(0,3,0)
+jtrace.Anchored = true
+jtrace.CanCollide = false
+jtrace.BrickColor = BrickColor.new("Really black")
+jtrace.Material = "Granite"
+BurningEff(jtrace)
+game.Debris:AddItem(jtrace,1)
+end
+end
+end)
+ 
+HubSection:NewButton("Universal Hub", "Fe scripts", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
+end)
+ 
+HubSection:NewButton("Energize Fe", "Animations that be fe", function()
+    -- Energize by illremember, fe animations
+-- DO NOT COPY AND CLAIM AS OWN, if you are using some of the script for your own, credit is highly appreciated!
+-- Thank you, and enjoy.
+ 
+-- Objects
+ 
+local Energize = Instance.new("ScreenGui") -- The actual GUI
+local SideFrame = Instance.new("Frame") -- Visible when GUI is closed
+local OpenGUI = Instance.new("TextButton") -- Part of SideFrame
+local SideFrameTitle = Instance.new("TextLabel") -- Part of SideFrame
+local MainFrame = Instance.new("Frame") -- All of the stuff on the main frame
+local GuiBottomFrame = Instance.new("Frame") -- Part of Active Frame
+local Credits = Instance.new("TextLabel") -- Credits to illremember, hello there
+local ScrollingFrame = Instance.new("ScrollingFrame") -- The scrolling frame of animations
+local CheckR = Instance.new("TextLabel") -- Check if R15 or R6
+local ScrollingFrameR15 = Instance.new("ScrollingFrame") -- The scrolling frame of R15 animations
+ 
+local CrazySlash = Instance.new("TextButton")--COMPLETE
+local Open = Instance.new("TextButton")--COMPLETE
+local R15Spinner = Instance.new("TextButton")--COMPLETE
+local ArmsOut = Instance.new("TextButton")--COMPLETE
+local FloatSlash = Instance.new("TextButton")--COMPLETE
+local WeirdZombie = Instance.new("TextButton")--COMPLETE
+local DownSlash = Instance.new("TextButton")--COMPLETE
+local Pull = Instance.new("TextButton")--COMPLETE
+local CircleArm = Instance.new("TextButton")--COMPLETE
+local Bend = Instance.new("TextButton")--COMPLETE
+local RotateSlash = Instance.new("TextButton")--COMPLETE
+local FlingArms = Instance.new("TextButton")--COMPLETE
+ 
+local FullSwing = Instance.new("TextButton")--COMPLETE
+local GlitchLevitate = Instance.new("TextButton")--COMPLETE
+local MoonDance = Instance.new("TextButton")--COMPLETE
+local FullPunch = Instance.new("TextButton")--COMPLETE
+local Crouch = Instance.new("TextButton")--COMPLETE
+local SpinDance = Instance.new("TextButton")--COMPLETE
+local FloorFaint = Instance.new("TextButton")--COMPLETE
+local JumpingJacks = Instance.new("TextButton")--COMPLETE
+local Spinner = Instance.new("TextButton")--COMPLETE
+local MegaInsane = Instance.new("TextButton")--COMPLETE
+local ArmDetach = Instance.new("TextButton")--COMPLETE
+local WeirdMove = Instance.new("TextButton")--COMPLETE
+local Faint = Instance.new("TextButton")--COMPLETE
+local CloneIllusion = Instance.new("TextButton")--COMPLETE
+local Levitate = Instance.new("TextButton")--COMPLETE
+local DinoWalk = Instance.new("TextButton")--COMPLETE
+local FloorCrawl = Instance.new("TextButton")--COMPLETE
+local SwordSlam = Instance.new("TextButton")--COMPLETE
+local LoopHead = Instance.new("TextButton")--COMPLETE
+local HeroJump = Instance.new("TextButton")--COMPLETE
+local Insane = Instance.new("TextButton")--COMPLETE
+local FloatingHead = Instance.new("TextButton")--COMPLETE
+local HeadThrow = Instance.new("TextButton")--COMPLETE
+local MovingDance = Instance.new("TextButton")--COMPLETE
+local SuperPunch = Instance.new("TextButton")--COMPLETE
+local ArmTurbine = Instance.new("TextButton")--COMPLETE
+local Dab = Instance.new("TextButton")--COMPLETE
+local FloatSit = Instance.new("TextButton")--COMPLETE
+local SuperFaint = Instance.new("TextButton")--COMPLETE
+local BarrelRoll = Instance.new("TextButton")--COMPLETE
+local Scared = Instance.new("TextButton")--COMPLETE
+local InsaneArms = Instance.new("TextButton")--COMPLETE
+local SwordSlice = Instance.new("TextButton")--COMPLETE
+local SpinDance2 = Instance.new("TextButton")--COMPLETE
+local BowDown = Instance.new("TextButton")--COMPLETE
+local LoopSlam = Instance.new("TextButton")--COMPLETE
+ 
+local GuiTopFrame = Instance.new("Frame") -- Top of the main frame
+local CloseGUI = Instance.new("TextButton") -- To close the GUI
+local Title = Instance.new("TextLabel") -- Actual title of GUI, Energize
+ 
+-- Properties
+ 
+Energize.Name = "Energize"
+Energize.Parent = game.Players.LocalPlayer.PlayerGui
+ 
+SideFrame.Name = "SideFrame"
+SideFrame.Parent = Energize
+SideFrame.Active = true
+SideFrame.BackgroundColor3 = Color3.new(1, 0.329412, 0.329412)
+SideFrame.Draggable = true
+SideFrame.Position = UDim2.new(0, 376, 0, 125)
+SideFrame.Size = UDim2.new(0, 460, 0, 32)
+SideFrame.Visible = false
+ 
+OpenGUI.Name = "OpenGUI"
+OpenGUI.Parent = SideFrame
+OpenGUI.BackgroundColor3 = Color3.new(1, 1, 1)
+OpenGUI.BackgroundTransparency = 1
+OpenGUI.Position = UDim2.new(0, 426, 0, 0)
+OpenGUI.Size = UDim2.new(0, 34, 0, 32)
+OpenGUI.Font = Enum.Font.SourceSans
+OpenGUI.FontSize = Enum.FontSize.Size48
+OpenGUI.Text = "X"
+OpenGUI.TextColor3 = Color3.new(0.333333, 0, 0)
+OpenGUI.TextSize = 40
+OpenGUI.TextWrapped = true
+ 
+SideFrameTitle.Name = "SideFrameTitle"
+SideFrameTitle.Parent = SideFrame
+SideFrameTitle.BackgroundColor3 = Color3.new(1, 1, 1)
+SideFrameTitle.BackgroundTransparency = 1
+SideFrameTitle.Position = UDim2.new(0, 170, 0, 0)
+SideFrameTitle.Size = UDim2.new(0, 119, 0, 31)
+SideFrameTitle.Font = Enum.Font.Arial
+SideFrameTitle.FontSize = Enum.FontSize.Size24
+SideFrameTitle.Text = "Energize"
+SideFrameTitle.TextSize = 21
+SideFrameTitle.TextStrokeColor3 = Color3.new(0.27451, 0.92549, 0.905882)
+SideFrameTitle.TextStrokeTransparency = 0.69999998807907
+ 
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Energize
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+MainFrame.BackgroundTransparency = 1
+MainFrame.Draggable = true
+MainFrame.Position = UDim2.new(0, 376, 0, 125)
+MainFrame.Size = UDim2.new(0, 444, 0, 280)
+ 
+GuiBottomFrame.Name = "Gui BottomFrame"
+GuiBottomFrame.Parent = MainFrame
+GuiBottomFrame.BackgroundColor3 = Color3.new(1, 0.329412, 0.329412)
+GuiBottomFrame.BorderColor3 = Color3.new(0.243137, 0.243137, 0.243137)
+GuiBottomFrame.Position = UDim2.new(0, 0, 0, 247)
+GuiBottomFrame.Size = UDim2.new(0, 460, 0, 32)
+ 
+Credits.Name = "Credits"
+Credits.Parent = GuiBottomFrame
+Credits.BackgroundColor3 = Color3.new(1, 1, 1)
+Credits.BackgroundTransparency = 1
+Credits.Size = UDim2.new(0, 460, 0, 32)
+Credits.FontSize = Enum.FontSize.Size14
+Credits.Text = "By illremember FE Animations Gui"
+Credits.TextColor3 = Color3.new(0.219608, 0.219608, 0.219608)
+Credits.TextSize = 14
+Credits.TextStrokeColor3 = Color3.new(0.141176, 0.870588, 0.713726)
+Credits.TextStrokeTransparency = 0.69999998807907
+Credits.TextWrapped = true
+ 
+ScrollingFrame.Parent = MainFrame
+ScrollingFrame.BackgroundColor3 = Color3.new(1, 0.564706, 0.564706)
+ScrollingFrame.Position = UDim2.new(0, 0, 0, 32)
+ScrollingFrame.Size = UDim2.new(0, 460, 0, 215)
+ScrollingFrame.ScrollBarThickness = 13
+ 
+FullSwing.Name = "FullSwing"
+FullSwing.Parent = ScrollingFrame
+FullSwing.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+FullSwing.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FullSwing.Position = UDim2.new(0, 17, 0, 322)
+FullSwing.Size = UDim2.new(0, 119, 0, 34)
+FullSwing.Font = Enum.Font.Highway
+FullSwing.FontSize = Enum.FontSize.Size24
+FullSwing.Text = "Full Swing"
+FullSwing.TextSize = 20
+FullSwing.TextWrapped = true
+ 
+GlitchLevitate.Name = "GlitchLevitate"
+GlitchLevitate.Parent = ScrollingFrame
+GlitchLevitate.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+GlitchLevitate.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+GlitchLevitate.Position = UDim2.new(0, 319, 0, 322)
+GlitchLevitate.Size = UDim2.new(0, 119, 0, 34)
+GlitchLevitate.Font = Enum.Font.Highway
+GlitchLevitate.FontSize = Enum.FontSize.Size24
+GlitchLevitate.Text = "Glitch Levitate"
+GlitchLevitate.TextSize = 20
+GlitchLevitate.TextWrapped = true
+ 
+MoonDance.Name = "MoonDance"
+MoonDance.Parent = ScrollingFrame
+MoonDance.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+MoonDance.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+MoonDance.Position = UDim2.new(0, 319, 0, 280)
+MoonDance.Size = UDim2.new(0, 119, 0, 34)
+MoonDance.Font = Enum.Font.Highway
+MoonDance.FontSize = Enum.FontSize.Size24
+MoonDance.Text = "Moon Dance"
+MoonDance.TextSize = 20
+MoonDance.TextWrapped = true
+ 
+FullPunch.Name = "FullPunch"
+FullPunch.Parent = ScrollingFrame
+FullPunch.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+FullPunch.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FullPunch.Position = UDim2.new(0, 17, 0, 280)
+FullPunch.Size = UDim2.new(0, 119, 0, 34)
+FullPunch.Font = Enum.Font.Highway
+FullPunch.FontSize = Enum.FontSize.Size24
+FullPunch.Text = "Full Punch"
+FullPunch.TextSize = 20
+FullPunch.TextWrapped = true
+ 
+Crouch.Name = "Crouch"
+Crouch.Parent = ScrollingFrame
+Crouch.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Crouch.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Crouch.Position = UDim2.new(0, 168, 0, 280)
+Crouch.Size = UDim2.new(0, 119, 0, 34)
+Crouch.Font = Enum.Font.Highway
+Crouch.FontSize = Enum.FontSize.Size24
+Crouch.Text = "Crouch"
+Crouch.TextSize = 20
+Crouch.TextWrapped = true
+ 
+SpinDance.Name = "SpinDance"
+SpinDance.Parent = ScrollingFrame
+SpinDance.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+SpinDance.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+SpinDance.Position = UDim2.new(0, 168, 0, 236)
+SpinDance.Size = UDim2.new(0, 119, 0, 34)
+SpinDance.Font = Enum.Font.Highway
+SpinDance.FontSize = Enum.FontSize.Size24
+SpinDance.Text = "Spin Dance"
+SpinDance.TextSize = 20
+SpinDance.TextWrapped = true
+ 
+FloorFaint.Name = "FloorFaint"
+FloorFaint.Parent = ScrollingFrame
+FloorFaint.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+FloorFaint.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FloorFaint.Position = UDim2.new(0, 17, 0, 236)
+FloorFaint.Size = UDim2.new(0, 119, 0, 34)
+FloorFaint.Font = Enum.Font.Highway
+FloorFaint.FontSize = Enum.FontSize.Size24
+FloorFaint.Text = "Floor Faint"
+FloorFaint.TextSize = 20
+FloorFaint.TextWrapped = true
+ 
+JumpingJacks.Name = "JumpingJacks"
+JumpingJacks.Parent = ScrollingFrame
+JumpingJacks.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+JumpingJacks.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+JumpingJacks.Position = UDim2.new(0, 319, 0, 236)
+JumpingJacks.Size = UDim2.new(0, 119, 0, 34)
+JumpingJacks.Font = Enum.Font.Highway
+JumpingJacks.FontSize = Enum.FontSize.Size24
+JumpingJacks.Text = "Jumping Jacks"
+JumpingJacks.TextSize = 20
+JumpingJacks.TextWrapped = true
+ 
+Spinner.Name = "Spinner"
+Spinner.Parent = ScrollingFrame
+Spinner.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Spinner.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Spinner.Position = UDim2.new(0, 17, 0, 192)
+Spinner.Size = UDim2.new(0, 119, 0, 34)
+Spinner.Font = Enum.Font.Highway
+Spinner.FontSize = Enum.FontSize.Size24
+Spinner.Text = "Spinner"
+Spinner.TextSize = 20
+Spinner.TextWrapped = true
+ 
+MegaInsane.Name = "MegaInsane"
+MegaInsane.Parent = ScrollingFrame
+MegaInsane.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+MegaInsane.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+MegaInsane.Position = UDim2.new(0, 168, 0, 192)
+MegaInsane.Size = UDim2.new(0, 119, 0, 34)
+MegaInsane.Font = Enum.Font.Highway
+MegaInsane.FontSize = Enum.FontSize.Size24
+MegaInsane.Text = "Mega Insane"
+MegaInsane.TextSize = 20
+MegaInsane.TextWrapped = true
+ 
+ArmDetach.Name = "ArmDetach"
+ArmDetach.Parent = ScrollingFrame
+ArmDetach.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+ArmDetach.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+ArmDetach.Position = UDim2.new(0, 319, 0, 192)
+ArmDetach.Size = UDim2.new(0, 119, 0, 34)
+ArmDetach.Font = Enum.Font.Highway
+ArmDetach.FontSize = Enum.FontSize.Size24
+ArmDetach.Text = "Arm Detach"
+ArmDetach.TextSize = 20
+ArmDetach.TextWrapped = true
+ 
+WeirdMove.Name = "WeirdMove"
+WeirdMove.Parent = ScrollingFrame
+WeirdMove.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+WeirdMove.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+WeirdMove.Position = UDim2.new(0, 168, 0, 148)
+WeirdMove.Size = UDim2.new(0, 119, 0, 34)
+WeirdMove.Font = Enum.Font.Highway
+WeirdMove.FontSize = Enum.FontSize.Size24
+WeirdMove.Text = "Weird Move"
+WeirdMove.TextSize = 20
+WeirdMove.TextWrapped = true
+ 
+Faint.Name = "Faint"
+Faint.Parent = ScrollingFrame
+Faint.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Faint.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Faint.Position = UDim2.new(0, 17, 0, 148)
+Faint.Size = UDim2.new(0, 119, 0, 34)
+Faint.Font = Enum.Font.Highway
+Faint.FontSize = Enum.FontSize.Size24
+Faint.Text = "Faint"
+Faint.TextSize = 20
+Faint.TextWrapped = true
+ 
+CloneIllusion.Name = "CloneIllusion"
+CloneIllusion.Parent = ScrollingFrame
+CloneIllusion.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+CloneIllusion.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+CloneIllusion.Position = UDim2.new(0, 319, 0, 148)
+CloneIllusion.Size = UDim2.new(0, 119, 0, 34)
+CloneIllusion.Font = Enum.Font.Highway
+CloneIllusion.FontSize = Enum.FontSize.Size24
+CloneIllusion.Text = "Clone Illusion"
+CloneIllusion.TextSize = 20
+CloneIllusion.TextWrapped = true
+ 
+Levitate.Name = "Levitate"
+Levitate.Parent = ScrollingFrame
+Levitate.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Levitate.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Levitate.Position = UDim2.new(0, 17, 0, 104)
+Levitate.Size = UDim2.new(0, 119, 0, 34)
+Levitate.Font = Enum.Font.Highway
+Levitate.FontSize = Enum.FontSize.Size24
+Levitate.Text = "Levitate"
+Levitate.TextSize = 20
+Levitate.TextWrapped = true
+ 
+DinoWalk.Name = "DinoWalk"
+DinoWalk.Parent = ScrollingFrame
+DinoWalk.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+DinoWalk.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+DinoWalk.Position = UDim2.new(0, 168, 0, 104)
+DinoWalk.Size = UDim2.new(0, 119, 0, 34)
+DinoWalk.Font = Enum.Font.Highway
+DinoWalk.FontSize = Enum.FontSize.Size24
+DinoWalk.Text = "Dino Walk"
+DinoWalk.TextSize = 20
+DinoWalk.TextWrapped = true
+ 
+FloorCrawl.Name = "FloorCrawl"
+FloorCrawl.Parent = ScrollingFrame
+FloorCrawl.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+FloorCrawl.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FloorCrawl.Position = UDim2.new(0, 319, 0, 104)
+FloorCrawl.Size = UDim2.new(0, 119, 0, 34)
+FloorCrawl.Font = Enum.Font.Highway
+FloorCrawl.FontSize = Enum.FontSize.Size24
+FloorCrawl.Text = "Floor Crawl"
+FloorCrawl.TextSize = 20
+FloorCrawl.TextWrapped = true
+ 
+SwordSlam.Name = "SwordSlam"
+SwordSlam.Parent = ScrollingFrame
+SwordSlam.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+SwordSlam.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+SwordSlam.Position = UDim2.new(0, 319, 0, 60)
+SwordSlam.Size = UDim2.new(0, 119, 0, 34)
+SwordSlam.Font = Enum.Font.Highway
+SwordSlam.FontSize = Enum.FontSize.Size24
+SwordSlam.Text = "Sword Slam"
+SwordSlam.TextSize = 20
+SwordSlam.TextWrapped = true
+ 
+LoopHead.Name = "LoopHead"
+LoopHead.Parent = ScrollingFrame
+LoopHead.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+LoopHead.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+LoopHead.Position = UDim2.new(0, 168, 0, 60)
+LoopHead.Size = UDim2.new(0, 119, 0, 34)
+LoopHead.Font = Enum.Font.Highway
+LoopHead.FontSize = Enum.FontSize.Size24
+LoopHead.Text = "Loop Head"
+LoopHead.TextSize = 20
+LoopHead.TextWrapped = true
+ 
+HeroJump.Name = "HeroJump"
+HeroJump.Parent = ScrollingFrame
+HeroJump.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+HeroJump.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+HeroJump.Position = UDim2.new(0, 17, 0, 60)
+HeroJump.Size = UDim2.new(0, 119, 0, 34)
+HeroJump.Font = Enum.Font.Highway
+HeroJump.FontSize = Enum.FontSize.Size24
+HeroJump.Text = "Hero Jump"
+HeroJump.TextSize = 20
+HeroJump.TextWrapped = true
+ 
+Insane.Name = "Insane"
+Insane.Parent = ScrollingFrame
+Insane.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Insane.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Insane.Position = UDim2.new(0, 319, 0, 16)
+Insane.Size = UDim2.new(0, 119, 0, 34)
+Insane.Font = Enum.Font.Highway
+Insane.FontSize = Enum.FontSize.Size24
+Insane.Text = "Insane"
+Insane.TextSize = 20
+Insane.TextWrapped = true
+ 
+FloatingHead.Name = "FloatingHead"
+FloatingHead.Parent = ScrollingFrame
+FloatingHead.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+FloatingHead.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FloatingHead.Position = UDim2.new(0, 168, 0, 16)
+FloatingHead.Size = UDim2.new(0, 119, 0, 34)
+FloatingHead.Font = Enum.Font.Highway
+FloatingHead.FontSize = Enum.FontSize.Size24
+FloatingHead.Text = "Floating Head"
+FloatingHead.TextSize = 20
+FloatingHead.TextWrapped = true
+ 
+HeadThrow.Name = "HeadThrow"
+HeadThrow.Parent = ScrollingFrame
+HeadThrow.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+HeadThrow.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+HeadThrow.Position = UDim2.new(0, 17, 0, 16)
+HeadThrow.Size = UDim2.new(0, 119, 0, 34)
+HeadThrow.Font = Enum.Font.Highway
+HeadThrow.FontSize = Enum.FontSize.Size24
+HeadThrow.Text = "Head Throw"
+HeadThrow.TextSize = 20
+HeadThrow.TextWrapped = true
+ 
+MovingDance.Name = "MovingDance"
+MovingDance.Parent = ScrollingFrame
+MovingDance.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+MovingDance.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+MovingDance.Position = UDim2.new(0, 168, 0, 324)
+MovingDance.Size = UDim2.new(0, 119, 0, 34)
+MovingDance.Font = Enum.Font.Highway
+MovingDance.FontSize = Enum.FontSize.Size24
+MovingDance.Text = "Moving Dance"
+MovingDance.TextSize = 20
+MovingDance.TextWrapped = true
+ 
+SuperPunch.Name = "SuperPunch"
+SuperPunch.Parent = ScrollingFrame
+SuperPunch.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+SuperPunch.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+SuperPunch.Position = UDim2.new(0, 168, 0, 366)
+SuperPunch.Size = UDim2.new(0, 119, 0, 34)
+SuperPunch.Font = Enum.Font.Highway
+SuperPunch.FontSize = Enum.FontSize.Size24
+SuperPunch.Text = "Super Punch"
+SuperPunch.TextSize = 20
+SuperPunch.TextWrapped = true
+ 
+ArmTurbine.Name = "ArmTurbine"
+ArmTurbine.Parent = ScrollingFrame
+ArmTurbine.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+ArmTurbine.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+ArmTurbine.Position = UDim2.new(0, 319, 0, 366)
+ArmTurbine.Size = UDim2.new(0, 119, 0, 34)
+ArmTurbine.Font = Enum.Font.Highway
+ArmTurbine.FontSize = Enum.FontSize.Size24
+ArmTurbine.Text = "Arm Turbine"
+ArmTurbine.TextSize = 20
+ArmTurbine.TextWrapped = true
+ 
+Dab.Name = "Dab"
+Dab.Parent = ScrollingFrame
+Dab.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Dab.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Dab.Position = UDim2.new(0, 17, 0, 366)
+Dab.Size = UDim2.new(0, 119, 0, 34)
+Dab.Font = Enum.Font.Highway
+Dab.FontSize = Enum.FontSize.Size24
+Dab.Text = "Dab"
+Dab.TextSize = 20
+Dab.TextWrapped = true
+ 
+FloatSit.Name = "FloatSit"
+FloatSit.Parent = ScrollingFrame
+FloatSit.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+FloatSit.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FloatSit.Position = UDim2.new(0, 168, 0, 410)
+FloatSit.Size = UDim2.new(0, 119, 0, 34)
+FloatSit.Font = Enum.Font.Highway
+FloatSit.FontSize = Enum.FontSize.Size24
+FloatSit.Text = "Float Sit"
+FloatSit.TextSize = 20
+FloatSit.TextWrapped = true
+ 
+SuperFaint.Name = "SuperFaint"
+SuperFaint.Parent = ScrollingFrame
+SuperFaint.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+SuperFaint.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+SuperFaint.Position = UDim2.new(0, 17, 0, 498)
+SuperFaint.Size = UDim2.new(0, 119, 0, 34)
+SuperFaint.Font = Enum.Font.Highway
+SuperFaint.FontSize = Enum.FontSize.Size24
+SuperFaint.Text = "Super Faint"
+SuperFaint.TextSize = 20
+SuperFaint.TextWrapped = true
+ 
+BarrelRoll.Name = "BarrelRoll"
+BarrelRoll.Parent = ScrollingFrame
+BarrelRoll.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+BarrelRoll.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+BarrelRoll.Position = UDim2.new(0, 319, 0, 410)
+BarrelRoll.Size = UDim2.new(0, 119, 0, 34)
+BarrelRoll.Font = Enum.Font.Highway
+BarrelRoll.FontSize = Enum.FontSize.Size24
+BarrelRoll.Text = "Barrel Roll"
+BarrelRoll.TextSize = 20
+BarrelRoll.TextWrapped = true
+ 
+Scared.Name = "Scared"
+Scared.Parent = ScrollingFrame
+Scared.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+Scared.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Scared.Position = UDim2.new(0, 319, 0, 454)
+Scared.Size = UDim2.new(0, 119, 0, 34)
+Scared.Font = Enum.Font.Highway
+Scared.FontSize = Enum.FontSize.Size24
+Scared.Text = "Scared"
+Scared.TextSize = 20
+Scared.TextWrapped = true
+ 
+InsaneArms.Name = "InsaneArms"
+InsaneArms.Parent = ScrollingFrame
+InsaneArms.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+InsaneArms.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+InsaneArms.Position = UDim2.new(0, 17, 0, 454)
+InsaneArms.Size = UDim2.new(0, 119, 0, 34)
+InsaneArms.Font = Enum.Font.Highway
+InsaneArms.FontSize = Enum.FontSize.Size24
+InsaneArms.Text = "Insane Arms"
+InsaneArms.TextSize = 20
+InsaneArms.TextWrapped = true
+ 
+SwordSlice.Name = "SwordSlice"
+SwordSlice.Parent = ScrollingFrame
+SwordSlice.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+SwordSlice.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+SwordSlice.Position = UDim2.new(0, 168, 0, 454)
+SwordSlice.Size = UDim2.new(0, 119, 0, 34)
+SwordSlice.Font = Enum.Font.Highway
+SwordSlice.FontSize = Enum.FontSize.Size24
+SwordSlice.Text = "Sword Slice"
+SwordSlice.TextSize = 20
+SwordSlice.TextWrapped = true
+ 
+SpinDance2.Name = "SpinDance2"
+SpinDance2.Parent = ScrollingFrame
+SpinDance2.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+SpinDance2.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+SpinDance2.Position = UDim2.new(0, 168, 0, 498)
+SpinDance2.Size = UDim2.new(0, 119, 0, 34)
+SpinDance2.Font = Enum.Font.Highway
+SpinDance2.FontSize = Enum.FontSize.Size24
+SpinDance2.Text = "Spin Dance 2"
+SpinDance2.TextSize = 20
+SpinDance2.TextWrapped = true
+ 
+BowDown.Name = "BowDown"
+BowDown.Parent = ScrollingFrame
+BowDown.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+BowDown.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+BowDown.Position = UDim2.new(0, 319, 0, 498)
+BowDown.Size = UDim2.new(0, 119, 0, 34)
+BowDown.Font = Enum.Font.Highway
+BowDown.FontSize = Enum.FontSize.Size24
+BowDown.Text = "Bow Down"
+BowDown.TextSize = 20
+BowDown.TextWrapped = true
+ 
+LoopSlam.Name = "LoopSlam"
+LoopSlam.Parent = ScrollingFrame
+LoopSlam.BackgroundColor3 = Color3.new(0.886275, 0.776471, 0.368627)
+LoopSlam.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+LoopSlam.Position = UDim2.new(0, 17, 0, 410)
+LoopSlam.Size = UDim2.new(0, 119, 0, 34)
+LoopSlam.Font = Enum.Font.Highway
+LoopSlam.FontSize = Enum.FontSize.Size24
+LoopSlam.Text = "Loop Slam"
+LoopSlam.TextSize = 20
+LoopSlam.TextWrapped = true
+ 
+GuiTopFrame.Name = "Gui TopFrame"
+GuiTopFrame.Parent = MainFrame
+GuiTopFrame.BackgroundColor3 = Color3.new(1, 0.329412, 0.329412)
+GuiTopFrame.BorderColor3 = Color3.new(0.243137, 0.243137, 0.243137)
+GuiTopFrame.Size = UDim2.new(0, 460, 0, 32)
+ 
+CloseGUI.Name = "CloseGUI"
+CloseGUI.Parent = GuiTopFrame
+CloseGUI.BackgroundColor3 = Color3.new(1, 1, 1)
+CloseGUI.BackgroundTransparency = 1
+CloseGUI.Position = UDim2.new(0, 426, 0, 0)
+CloseGUI.Size = UDim2.new(0, 34, 0, 32)
+CloseGUI.Font = Enum.Font.SourceSans
+CloseGUI.FontSize = Enum.FontSize.Size48
+CloseGUI.Text = "X"
+CloseGUI.TextColor3 = Color3.new(0.333333, 0, 0)
+CloseGUI.TextSize = 40
+CloseGUI.TextWrapped = true
+ 
+Title.Name = "Title"
+Title.Parent = GuiTopFrame
+Title.BackgroundColor3 = Color3.new(1, 1, 1)
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(0, 460, 0, 32)
+Title.FontSize = Enum.FontSize.Size14
+Title.Text = "Energize"
+Title.TextColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Title.TextSize = 14
+Title.TextStrokeColor3 = Color3.new(0.384314, 0.917647, 1)
+Title.TextStrokeTransparency = 0.69999998807907
+Title.TextWrapped = true
+ 
+CheckR.Name = "CheckR"
+CheckR.Parent = GuiTopFrame
+CheckR.BackgroundColor3 = Color3.new(1, 1, 1)
+CheckR.BackgroundTransparency = 1
+CheckR.Size = UDim2.new(0, 171, 0, 32)
+CheckR.Font = Enum.Font.SourceSansBold
+CheckR.FontSize = Enum.FontSize.Size14
+CheckR.Text = "Text"
+CheckR.TextScaled = true
+CheckR.TextSize = 14
+CheckR.TextWrapped = true
+ 
+ScrollingFrameR15.Name = "ScrollingFrameR15"
+ScrollingFrameR15.Parent = MainFrame
+ScrollingFrameR15.BackgroundColor3 = Color3.new(1, 0.564706, 0.564706)
+ScrollingFrameR15.Position = UDim2.new(0, 0, 0, 32)
+ScrollingFrameR15.Size = UDim2.new(0, 460, 0, 215)
+ScrollingFrameR15.Visible = false
+ScrollingFrameR15.ScrollBarThickness = 13
+ 
+CrazySlash.Name = "CrazySlash"
+CrazySlash.Parent = ScrollingFrameR15
+CrazySlash.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+CrazySlash.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+CrazySlash.Position = UDim2.new(0, 17, 0, 16)
+CrazySlash.Size = UDim2.new(0, 119, 0, 34)
+CrazySlash.Font = Enum.Font.Highway
+CrazySlash.FontSize = Enum.FontSize.Size24
+CrazySlash.Text = "CrazySlash"
+CrazySlash.TextSize = 20
+CrazySlash.TextWrapped = true
+ 
+Open.Name = "Open"
+Open.Parent = ScrollingFrameR15
+Open.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+Open.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Open.Position = UDim2.new(0, 168, 0, 16)
+Open.Size = UDim2.new(0, 119, 0, 34)
+Open.Font = Enum.Font.Highway
+Open.FontSize = Enum.FontSize.Size24
+Open.Text = "Open"
+Open.TextSize = 20
+Open.TextWrapped = true
+ 
+R15Spinner.Name = "R15Spinner"
+R15Spinner.Parent = ScrollingFrameR15
+R15Spinner.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+R15Spinner.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+R15Spinner.Position = UDim2.new(0, 17, 0, 60)
+R15Spinner.Size = UDim2.new(0, 119, 0, 34)
+R15Spinner.Font = Enum.Font.Highway
+R15Spinner.FontSize = Enum.FontSize.Size24
+R15Spinner.Text = "Spinner"
+R15Spinner.TextSize = 20
+R15Spinner.TextWrapped = true
+ 
+ArmsOut.Name = "ArmsOut"
+ArmsOut.Parent = ScrollingFrameR15
+ArmsOut.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+ArmsOut.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+ArmsOut.Position = UDim2.new(0, 319, 0, 16)
+ArmsOut.Size = UDim2.new(0, 119, 0, 34)
+ArmsOut.Font = Enum.Font.Highway
+ArmsOut.FontSize = Enum.FontSize.Size24
+ArmsOut.Text = "ArmsOut"
+ArmsOut.TextSize = 20
+ArmsOut.TextWrapped = true
+ 
+FloatSlash.Name = "FloatSlash"
+FloatSlash.Parent = ScrollingFrameR15
+FloatSlash.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+FloatSlash.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FloatSlash.Position = UDim2.new(0, 168, 0, 148)
+FloatSlash.Size = UDim2.new(0, 119, 0, 34)
+FloatSlash.Font = Enum.Font.Highway
+FloatSlash.FontSize = Enum.FontSize.Size24
+FloatSlash.Text = "FloatSlash"
+FloatSlash.TextSize = 20
+FloatSlash.TextWrapped = true
+ 
+WeirdZombie.Name = "WeirdZombie"
+WeirdZombie.Parent = ScrollingFrameR15
+WeirdZombie.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+WeirdZombie.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+WeirdZombie.Position = UDim2.new(0, 17, 0, 148)
+WeirdZombie.Size = UDim2.new(0, 119, 0, 34)
+WeirdZombie.Font = Enum.Font.Highway
+WeirdZombie.FontSize = Enum.FontSize.Size24
+WeirdZombie.Text = "WeirdZombie"
+WeirdZombie.TextSize = 20
+WeirdZombie.TextWrapped = true
+ 
+DownSlash.Name = "DownSlash"
+DownSlash.Parent = ScrollingFrameR15
+DownSlash.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+DownSlash.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+DownSlash.Position = UDim2.new(0, 319, 0, 148)
+DownSlash.Size = UDim2.new(0, 119, 0, 34)
+DownSlash.Font = Enum.Font.Highway
+DownSlash.FontSize = Enum.FontSize.Size24
+DownSlash.Text = "DownSlash"
+DownSlash.TextSize = 20
+DownSlash.TextWrapped = true
+ 
+Pull.Name = "Pull"
+Pull.Parent = ScrollingFrameR15
+Pull.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+Pull.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Pull.Position = UDim2.new(0, 17, 0, 104)
+Pull.Size = UDim2.new(0, 119, 0, 34)
+Pull.Font = Enum.Font.Highway
+Pull.FontSize = Enum.FontSize.Size24
+Pull.Text = "Pull"
+Pull.TextSize = 20
+Pull.TextWrapped = true
+ 
+CircleArm.Name = "CircleArm"
+CircleArm.Parent = ScrollingFrameR15
+CircleArm.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+CircleArm.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+CircleArm.Position = UDim2.new(0, 168, 0, 104)
+CircleArm.Size = UDim2.new(0, 119, 0, 34)
+CircleArm.Font = Enum.Font.Highway
+CircleArm.FontSize = Enum.FontSize.Size24
+CircleArm.Text = "CircleArm"
+CircleArm.TextSize = 20
+CircleArm.TextWrapped = true
+ 
+Bend.Name = "Bend"
+Bend.Parent = ScrollingFrameR15
+Bend.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+Bend.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+Bend.Position = UDim2.new(0, 319, 0, 104)
+Bend.Size = UDim2.new(0, 119, 0, 34)
+Bend.Font = Enum.Font.Highway
+Bend.FontSize = Enum.FontSize.Size24
+Bend.Text = "Bend"
+Bend.TextSize = 20
+Bend.TextWrapped = true
+ 
+RotateSlash.Name = "RotateSlash"
+RotateSlash.Parent = ScrollingFrameR15
+RotateSlash.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+RotateSlash.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+RotateSlash.Position = UDim2.new(0, 319, 0, 60)
+RotateSlash.Size = UDim2.new(0, 119, 0, 34)
+RotateSlash.Font = Enum.Font.Highway
+RotateSlash.FontSize = Enum.FontSize.Size24
+RotateSlash.Text = "RotateSlash"
+RotateSlash.TextSize = 20
+RotateSlash.TextWrapped = true
+ 
+FlingArms.Name = "FlingArms"
+FlingArms.Parent = ScrollingFrameR15
+FlingArms.BackgroundColor3 = Color3.new(0.682353, 0.701961, 0.792157)
+FlingArms.BorderColor3 = Color3.new(0.313726, 0.313726, 0.313726)
+FlingArms.Position = UDim2.new(0, 168, 0, 60)
+FlingArms.Size = UDim2.new(0, 119, 0, 34)
+FlingArms.Font = Enum.Font.Highway
+FlingArms.FontSize = Enum.FontSize.Size24
+FlingArms.Text = "FlingArms"
+FlingArms.TextSize = 20
+FlingArms.TextWrapped = true
+ 
+-- Buttons
+col = Color3.new(0.886275, 0.776471, 0.368627)
+loc = Color3.new(1, 0.906471, 0.568627)
+rcol = Color3.new(0.682353, 0.701961, 0.792157)
+rloc = Color3.new(0.882353, 0.901961, 0.992157)
+ 
+CloseGUI.MouseButton1Click:connect(function()
+MainFrame.Visible = false
+SideFrame.Visible = true
+SideFrame.Position = MainFrame.Position
+end)
+ 
+OpenGUI.MouseButton1Click:connect(function()
+MainFrame.Visible = true
+SideFrame.Visible = false
+MainFrame.Position = SideFrame.Position
+end)
+ 
+if (game:GetService"Players".LocalPlayer.Character:WaitForChild("Humanoid").RigType == Enum.HumanoidRigType.R15) then
+    ScrollingFrame.Visible = false
+    ScrollingFrameR15.Visible = true
+    CheckR.Text = "Showing R15 Animations"
+else
+    ScrollingFrame.Visible = true
+    ScrollingFrameR15.Visible = false
+    CheckR.Text = "Showing R6 Animations"
+end
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://35154961"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local HeadThrowACTIVE = false
+HeadThrow.MouseButton1Click:connect(function()
+    HeadThrowACTIVE = not HeadThrowACTIVE
+    if HeadThrowACTIVE then
+        HeadThrow.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if HeadThrowACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        HeadThrow.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://121572214"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FloatingHeadACTIVE = false
+FloatingHead.MouseButton1Click:connect(function()
+    FloatingHeadACTIVE = not FloatingHeadACTIVE
+    if FloatingHeadACTIVE then
+        track:Play(.1, 1, 1)
+        FloatingHead.BackgroundColor3 = loc
+    else
+        track:Stop()
+        FloatingHead.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://182724289"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local CrouchACTIVE = false
+Crouch.MouseButton1Click:connect(function()
+    CrouchACTIVE = not CrouchACTIVE
+    if CrouchACTIVE then
+        track:Play(.1, 1, 1)
+        Crouch.BackgroundColor3 = loc
+    else
+        track:Stop()
+        Crouch.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://282574440"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FloorCrawlACTIVE = false
+FloorCrawl.MouseButton1Click:connect(function()
+    FloorCrawlACTIVE = not FloorCrawlACTIVE
+    if FloorCrawlACTIVE then
+        track:Play(.1, 1, 1)
+        FloorCrawl.BackgroundColor3 = loc
+    else
+        track:Stop()
+        FloorCrawl.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://204328711"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local DinoWalkACTIVE = false
+DinoWalk.MouseButton1Click:connect(function()
+    DinoWalkACTIVE = not DinoWalkACTIVE
+    if DinoWalkACTIVE then
+        track:Play(.1, 1, 1)
+        DinoWalk.BackgroundColor3 = loc
+    else
+        track:Stop()
+        DinoWalk.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://429681631"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local JumpingJacksACTIVE = false
+JumpingJacks.MouseButton1Click:connect(function()
+    JumpingJacksACTIVE = not JumpingJacksACTIVE
+    if JumpingJacksACTIVE then
+        track:Play(.1, 1, 1)
+        JumpingJacks.BackgroundColor3 = loc
+    else
+        track:Stop()
+        JumpingJacks.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://35154961"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local LoopHeadACTIVE = false
+LoopHead.MouseButton1Click:connect(function()
+    LoopHeadACTIVE = not LoopHeadACTIVE
+    if LoopHeadACTIVE then
+        LoopHead.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if LoopHeadACTIVE then
+                track:Play(.5, 1, 1e6)
+            end
+         end
+        end
+    else
+        track:Stop()
+        LoopHead.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://184574340"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local HeroJumpACTIVE = false
+HeroJump.MouseButton1Click:connect(function()
+    HeroJumpACTIVE = not HeroJumpACTIVE
+    if HeroJumpACTIVE then
+        HeroJump.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if HeroJumpACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        HeroJump.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://181526230"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FaintACTIVE = false
+Faint.MouseButton1Click:connect(function()
+    FaintACTIVE = not FaintACTIVE
+    if FaintACTIVE then
+        track:Play(.1, 1, 1)
+        Faint.BackgroundColor3 = loc
+    else
+        track:Stop()
+        Faint.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://181525546"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FloorFaintACTIVE = false
+FloorFaint.MouseButton1Click:connect(function()
+    FloorFaintACTIVE = not FloorFaintACTIVE
+    if FloorFaintACTIVE then
+        FloorFaint.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if FloorFaintACTIVE then
+                track:Play(.1, 1, 2)
+            end
+         end
+        end
+    else
+        track:Stop()
+        FloorFaint.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://181525546"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SuperFaintACTIVE = false
+SuperFaint.MouseButton1Click:connect(function()
+    SuperFaintACTIVE = not SuperFaintACTIVE
+    if SuperFaintACTIVE then
+        SuperFaint.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if SuperFaintACTIVE then
+                track:Play(.1, 0.5, 40)
+            end
+         end
+        end
+    else
+        track:Stop()
+        SuperFaint.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://313762630"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local LevitateACTIVE = false
+Levitate.MouseButton1Click:connect(function()
+    LevitateACTIVE = not LevitateACTIVE
+    if LevitateACTIVE then
+        track:Play(.1, 1, 1)
+        Levitate.BackgroundColor3 = loc
+    else
+        track:Stop()
+        Levitate.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://183412246"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local DabACTIVE = false
+Dab.MouseButton1Click:connect(function()
+    DabACTIVE = not DabACTIVE
+    if DabACTIVE then
+        Dab.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if DabACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        Dab.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://188632011"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SpinACTIVE = false
+Spinner.MouseButton1Click:connect(function()
+    SpinACTIVE = not SpinACTIVE
+    if SpinACTIVE then
+        Spinner.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if SpinACTIVE then
+                track:Play(.1, 1, 2)
+            end
+         end
+        end
+    else
+        track:Stop()
+        Spinner.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://179224234"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FloatSitACTIVE = false
+FloatSit.MouseButton1Click:connect(function()
+    FloatSitACTIVE = not FloatSitACTIVE
+    if FloatSitACTIVE then
+        track:Play(.1, 1, 1)
+        FloatSit.BackgroundColor3 = loc
+    else
+        track:Stop()
+        FloatSit.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://429703734"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local MovingDanceACTIVE = false
+MovingDance.MouseButton1Click:connect(function()
+    MovingDanceACTIVE = not MovingDanceACTIVE
+    if MovingDanceACTIVE then
+        MovingDance.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if MovingDanceACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        MovingDance.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://215384594"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local WeirdMoveACTIVE = false
+WeirdMove.MouseButton1Click:connect(function()
+    WeirdMoveACTIVE = not WeirdMoveACTIVE
+    if WeirdMoveACTIVE then
+        track:Play(.1, 1, 1)
+        WeirdMove.BackgroundColor3 = loc
+    else
+        track:Stop()
+        WeirdMove.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://215384594"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local CloneIllusionACTIVE = false
+CloneIllusion.MouseButton1Click:connect(function()
+    CloneIllusionACTIVE = not CloneIllusionACTIVE
+    if CloneIllusionACTIVE then
+        track:Play(.5, 1, 1e7)
+        CloneIllusion.BackgroundColor3 = loc
+    else
+        track:Stop()
+        CloneIllusion.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://313762630"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local GlitchLevitateACTIVE = false
+GlitchLevitate.MouseButton1Click:connect(function()
+    GlitchLevitateACTIVE = not GlitchLevitateACTIVE
+    if GlitchLevitateACTIVE then
+        track:Play(.5, 1, 1e7)
+        GlitchLevitate.BackgroundColor3 = loc
+    else
+        track:Stop()
+        GlitchLevitate.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://429730430"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SpinDanceACTIVE = false
+SpinDance.MouseButton1Click:connect(function()
+    SpinDanceACTIVE = not SpinDanceACTIVE
+    if SpinDanceACTIVE then
+        SpinDance.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if SpinDanceACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        SpinDance.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://45834924"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local MoonDanceACTIVE = false
+MoonDance.MouseButton1Click:connect(function()
+    MoonDanceACTIVE = not MoonDanceACTIVE
+    if MoonDanceACTIVE then
+        MoonDance.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if MoonDanceACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        MoonDance.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://204062532"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FullPunchACTIVE = false
+FullPunch.MouseButton1Click:connect(function()
+    FullPunchACTIVE = not FullPunchACTIVE
+    if FullPunchACTIVE then
+        FullPunch.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if FullPunchACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        FullPunch.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://186934910"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SpinDance2ACTIVE = false
+SpinDance2.MouseButton1Click:connect(function()
+    SpinDance2ACTIVE = not SpinDance2ACTIVE
+    if SpinDance2ACTIVE then
+        SpinDance2.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if SpinDance2ACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        SpinDance2.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://204292303"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local BowDownACTIVE = false
+BowDown.MouseButton1Click:connect(function()
+    BowDownACTIVE = not BowDownACTIVE
+    if BowDownACTIVE then
+        BowDown.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if BowDownACTIVE then
+                track:Play(.1, 1, 3)
+            end
+         end
+        end
+    else
+        track:Stop()
+        BowDown.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://204295235"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SwordSlamACTIVE = false
+SwordSlam.MouseButton1Click:connect(function()
+    SwordSlamACTIVE = not SwordSlamACTIVE
+    if SwordSlamACTIVE then
+        SwordSlam.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if SwordSlamACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        SwordSlam.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://204295235"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local LoopSlamACTIVE = false
+LoopSlam.MouseButton1Click:connect(function()
+    LoopSlamACTIVE = not LoopSlamACTIVE
+    if LoopSlamACTIVE then
+        LoopSlam.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if LoopSlamACTIVE then
+                track:Play(.1, 1, 1e4)
+            end
+         end
+        end
+    else
+        track:Stop()
+        LoopSlam.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://184574340"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local MegaInsaneACTIVE = false
+MegaInsane.MouseButton1Click:connect(function()
+    MegaInsaneACTIVE = not MegaInsaneACTIVE
+    if MegaInsaneACTIVE then
+        MegaInsane.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if MegaInsaneACTIVE then
+                track:Play(.1, 0.5, 40)
+            end
+         end
+        end
+    else
+        track:Stop()
+        MegaInsane.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://126753849"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SuperPunchACTIVE = false
+SuperPunch.MouseButton1Click:connect(function()
+    SuperPunchACTIVE = not SuperPunchACTIVE
+    if SuperPunchACTIVE then
+        SuperPunch.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if SuperPunchACTIVE then
+                track:Play(.1, 1, 3)
+            end
+         end
+        end
+    else
+        track:Stop()
+        SuperPunch.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://218504594"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FullSwingACTIVE = false
+FullSwing.MouseButton1Click:connect(function()
+    FullSwingACTIVE = not FullSwingACTIVE
+    if FullSwingACTIVE then
+        FullSwing.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if FullSwingACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        FullSwing.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://259438880"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local ArmTurbineACTIVE = false
+ArmTurbine.MouseButton1Click:connect(function()
+    ArmTurbineACTIVE = not ArmTurbineACTIVE
+    if ArmTurbineACTIVE then
+        track:Play(.1, 1, 1e3)
+        ArmTurbine.BackgroundColor3 = loc
+    else
+        track:Stop()
+        ArmTurbine.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://136801964"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local BarrelRollACTIVE = false
+BarrelRoll.MouseButton1Click:connect(function()
+    BarrelRollACTIVE = not BarrelRollACTIVE
+    if BarrelRollACTIVE then
+        BarrelRoll.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if BarrelRollACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        BarrelRoll.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://180612465"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local ScaredACTIVE = false
+Scared.MouseButton1Click:connect(function()
+    ScaredACTIVE = not ScaredACTIVE
+    if ScaredACTIVE then
+        Scared.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if ScaredACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        Scared.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://33796059"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local InsaneACTIVE = false
+Insane.MouseButton1Click:connect(function()
+    InsaneACTIVE = not InsaneACTIVE
+    if InsaneACTIVE then
+        track:Play(.1, 1, 1e8)
+        Insane.BackgroundColor3 = loc
+    else
+        track:Stop()
+        Insane.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://33169583"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local ArmDetachACTIVE = false
+ArmDetach.MouseButton1Click:connect(function()
+    ArmDetachACTIVE = not ArmDetachACTIVE
+    if ArmDetachACTIVE then
+        ArmDetach.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if ArmDetachACTIVE then
+                track:Play(.1, 1, 1e6)
+            end
+         end
+        end
+    else
+        track:Stop()
+        ArmDetach.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://35978879"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local SwordSliceACTIVE = false
+SwordSlice.MouseButton1Click:connect(function()
+    SwordSliceACTIVE = not SwordSliceACTIVE
+    if SwordSliceACTIVE then
+        track:Play(.1, 1, 1)
+        SwordSlice.BackgroundColor3 = loc
+    else
+        track:Stop()
+        SwordSlice.BackgroundColor3 = col
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://27432691"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local InsaneArmsACTIVE = false
+InsaneArms.MouseButton1Click:connect(function()
+    InsaneArmsACTIVE = not InsaneArmsACTIVE
+    if InsaneArmsACTIVE then
+        InsaneArms.BackgroundColor3 = loc
+        while wait() do
+         if track.IsPlaying == false then
+            if InsaneArmsACTIVE then
+                track:Play(.1, 1, 1e4)
+            end
+         end
+        end
+    else
+        track:Stop()
+        InsaneArms.BackgroundColor3 = col
+    end
+end)
+-- R15
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://674871189"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local CrazySlashACTIVE = false
+CrazySlash.MouseButton1Click:connect(function()
+    CrazySlashACTIVE = not CrazySlashACTIVE
+    if CrazySlashACTIVE then
+        CrazySlash.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if CrazySlashACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        CrazySlash.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://582855105"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local OpenACTIVE = false
+Open.MouseButton1Click:connect(function()
+    OpenACTIVE = not OpenACTIVE
+    if OpenACTIVE then
+        Open.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if OpenACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        Open.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://754658275"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local R15SpinnerACTIVE = false
+R15Spinner.MouseButton1Click:connect(function()
+    R15SpinnerACTIVE = not R15SpinnerACTIVE
+    if R15SpinnerACTIVE then
+        R15Spinner.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if R15SpinnerACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        R15Spinner.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://582384156"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local ArmsOutACTIVE = false
+ArmsOut.MouseButton1Click:connect(function()
+    ArmsOutACTIVE = not ArmsOutACTIVE
+    if ArmsOutACTIVE then
+        ArmsOut.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if ArmsOutACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        ArmsOut.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://717879555"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+local FloatSlashACTIVE = false
+FloatSlash.MouseButton1Click:connect(function()
+    FloatSlashACTIVE = not FloatSlashACTIVE
+    if FloatSlashACTIVE then
+        FloatSlash.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if FloatSlashACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        FloatSlash.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://708553116"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+WeirdZombieACTIVE = false
+WeirdZombie.MouseButton1Click:connect(function()
+    WeirdZombieACTIVE = not WeirdZombieACTIVE
+    if WeirdZombieACTIVE then
+        WeirdZombie.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if WeirdZombieACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        WeirdZombie.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://746398327"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+DownSlashACTIVE = false
+DownSlash.MouseButton1Click:connect(function()
+    DownSlashACTIVE = not DownSlashACTIVE
+    if DownSlashACTIVE then
+        DownSlash.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if DownSlashACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        DownSlash.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://675025795"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+PullACTIVE = false
+Pull.MouseButton1Click:connect(function()
+    PullACTIVE = not PullACTIVE
+    if PullACTIVE then
+        Pull.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if PullACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        Pull.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://698251653"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+CircleArmACTIVE = false
+CircleArm.MouseButton1Click:connect(function()
+    CircleArmACTIVE = not CircleArmACTIVE
+    if CircleArmACTIVE then
+        CircleArm.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if CircleArmACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        CircleArm.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://696096087"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+BendACTIVE = false
+Bend.MouseButton1Click:connect(function()
+    BendACTIVE = not BendACTIVE
+    if BendACTIVE then
+        Bend.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if BendACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        Bend.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://675025570"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+RotateSlashACTIVE = false
+RotateSlash.MouseButton1Click:connect(function()
+    RotateSlashACTIVE = not RotateSlashACTIVE
+    if RotateSlashACTIVE then
+        RotateSlash.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if RotateSlashACTIVE then
+                track:Play(.1, 1, 1)
+            end
+         end
+        end
+    else
+        track:Stop()
+        RotateSlash.BackgroundColor3 = rcol
+    end
+end)
+ 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://754656200"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+FlingArmsACTIVE = false
+FlingArms.MouseButton1Click:connect(function()
+    FlingArmsACTIVE = not FlingArmsACTIVE
+    if FlingArmsACTIVE then
+        FlingArms.BackgroundColor3 = rloc
+        while wait() do
+         if track.IsPlaying == false then
+            if FlingArmsACTIVE then
+                track:Play(.1, 1, 10)
+            end
+         end
+        end
+    else
+        track:Stop()
+        FlingArms.BackgroundColor3 = rcol
+    end
+end)
+ 
+-- Finished update!
+end)
+ 
+HubSection:NewButton("Pendulum FE", "even more fe scripts", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V5.lua"))()
+end)
